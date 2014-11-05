@@ -1,0 +1,778 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xml-fragment name="" version="v2">
+  <imp:properties xmlns:imp="http://www.bea.com/wli/config/importexport">
+    <imp:property name="username" value="pmontano"/>
+    <imp:property name="description" value=""/>
+    <imp:property name="exporttime" value="Wed Nov 05 08:18:40 PST 2014"/>
+    <imp:property name="productname" value="Oracle Service Bus"/>
+    <imp:property name="productversion" value="11.1.1.7"/>
+    <imp:property name="projectLevelExport" value="true"/>
+  </imp:properties>
+  <imp:exportedItemInfo instanceId="EllieMaeNetwork_v1.0/CreditService/Resource/xsd/EMCResponse" typeId="XMLSchema" xmlns:imp="http://www.bea.com/wli/config/importexport">
+    <imp:properties>
+      <imp:property name="representationversion" value="0"/>
+      <imp:property name="dataclass" value="com.bea.wli.sb.resources.config.impl.SchemaEntryDocumentImpl"/>
+      <imp:property name="isencrypted" value="false"/>
+      <imp:property name="jarentryname" value="EllieMaeNetwork_v1.0/CreditService/Resource/xsd/EMCResponse.XMLSchema"/>
+    </imp:properties>
+  </imp:exportedItemInfo>
+  <imp:exportedItemInfo instanceId="EllieMaeNetwork_v1.0/CreditService/Resource/xform/EMCtoVPS" typeId="Xquery" xmlns:imp="http://www.bea.com/wli/config/importexport">
+    <imp:properties>
+      <imp:property name="representationversion" value="0"/>
+      <imp:property name="dataclass" value="com.bea.wli.sb.resources.config.impl.XqueryEntryDocumentImpl"/>
+      <imp:property name="isencrypted" value="false"/>
+      <imp:property name="jarentryname" value="EllieMaeNetwork_v1.0/CreditService/Resource/xform/EMCtoVPS.Xquery"/>
+    </imp:properties>
+  </imp:exportedItemInfo>
+  <imp:exportedItemInfo instanceId="EllieMaeNetwork_v1.0/CreditService/Resource/xsd/EMCResponseExtended" typeId="XMLSchema" xmlns:imp="http://www.bea.com/wli/config/importexport">
+    <imp:properties>
+      <imp:property name="representationversion" value="0"/>
+      <imp:property name="dataclass" value="com.bea.wli.sb.resources.config.impl.SchemaEntryDocumentImpl"/>
+      <imp:property name="isencrypted" value="false"/>
+      <imp:property name="jarentryname" value="EllieMaeNetwork_v1.0/CreditService/Resource/xsd/EMCResponseExtended.XMLSchema"/>
+    </imp:properties>
+  </imp:exportedItemInfo>
+  <imp:exportedItemInfo instanceId="Shared_v1.0/SoaLog/Resource/adapters/SoaLogService_db" typeId="JCA" xmlns:imp="http://www.bea.com/wli/config/importexport">
+    <imp:properties>
+      <imp:property name="representationversion" value="0"/>
+      <imp:property name="dataclass" value="com.bea.wli.sb.resources.config.impl.JcaEntryDocumentImpl"/>
+      <imp:property name="isencrypted" value="false"/>
+      <imp:property name="jarentryname" value="Shared_v1.0/SoaLog/Resource/adapters/SoaLogService_db.JCA"/>
+      <imp:property name="extrefs" value="XML$Shared_v1.0$SoaLog$Resource$adapters$SoaLogService-or-mappings"/>
+      <imp:property name="extrefs" value="WSDL$Shared_v1.0$SoaLog$Resource$wsdl$SoaLogService"/>
+    </imp:properties>
+  </imp:exportedItemInfo>
+  <imp:exportedItemInfo instanceId="EllieMaeNetwork_v1.0/CreditService/Resource/adapters/CreditResponse-properties" typeId="XML" xmlns:imp="http://www.bea.com/wli/config/importexport">
+    <imp:properties>
+      <imp:property name="representationversion" value="0"/>
+      <imp:property name="dataclass" value="com.bea.wli.sb.resources.config.impl.XmlEntryDocumentImpl"/>
+      <imp:property name="isencrypted" value="false"/>
+      <imp:property name="jarentryname" value="EllieMaeNetwork_v1.0/CreditService/Resource/adapters/CreditResponse-properties.XML"/>
+    </imp:properties>
+  </imp:exportedItemInfo>
+  <imp:exportedItemInfo instanceId="EllieMaeNetwork_v1.0/CreditService/Proxy/CreditPullResponse_ps" typeId="ProxyService" xmlns:imp="http://www.bea.com/wli/config/importexport">
+    <imp:properties>
+      <imp:property name="representationversion" value="3000"/>
+      <imp:property name="dataclass" value="com.bea.wli.sb.services.impl.ServiceDefinitionImpl"/>
+      <imp:property name="isencrypted" value="false"/>
+      <imp:property name="jarentryname" value="EllieMaeNetwork_v1.0/CreditService/Proxy/CreditPullResponse_ps.ProxyService"/>
+      <imp:property name="extrefs" value="BusinessService$EllieMaeNetwork_v1.0$CreditService$Business$CreditResponse_db"/>
+      <imp:property name="extrefs" value="WSDL$EllieMaeNetwork_v1.0$CreditService$Resource$wsdl$CreditGetResponse"/>
+    </imp:properties>
+  </imp:exportedItemInfo>
+  <imp:exportedItemInfo instanceId="EllieMaeNetwork_v1.0/CreditServiceMocks/Resource/wsdl/CredcoVPS" typeId="WSDL" xmlns:imp="http://www.bea.com/wli/config/importexport">
+    <imp:properties>
+      <imp:property name="representationversion" value="0"/>
+      <imp:property name="dataclass" value="com.bea.wli.sb.resources.config.impl.WsdlEntryDocumentImpl"/>
+      <imp:property name="isencrypted" value="false"/>
+      <imp:property name="jarentryname" value="EllieMaeNetwork_v1.0/CreditServiceMocks/Resource/wsdl/CredcoVPS.WSDL"/>
+      <imp:property name="extrefs" value="XMLSchema$EllieMaeNetwork_v1.0$CreditService$Resource$xsd$EMCResponseExtended"/>
+      <imp:property name="extrefs" value="XMLSchema$EllieMaeNetwork_v1.0$CreditService$Resource$xsd$EMCRequestExtended"/>
+    </imp:properties>
+  </imp:exportedItemInfo>
+  <imp:exportedItemInfo instanceId="EllieMaeNetwork_v1.0/CreditService/Resource/xsd/CreditExternalResponse" typeId="XMLSchema" xmlns:imp="http://www.bea.com/wli/config/importexport">
+    <imp:properties>
+      <imp:property name="representationversion" value="0"/>
+      <imp:property name="dataclass" value="com.bea.wli.sb.resources.config.impl.SchemaEntryDocumentImpl"/>
+      <imp:property name="isencrypted" value="false"/>
+      <imp:property name="jarentryname" value="EllieMaeNetwork_v1.0/CreditService/Resource/xsd/CreditExternalResponse.XMLSchema"/>
+    </imp:properties>
+  </imp:exportedItemInfo>
+  <imp:exportedItemInfo instanceId="EllieMaeNetwork_v1.0/CreditService/Business/CreditCallbackDummyService_bs" typeId="BusinessService" xmlns:imp="http://www.bea.com/wli/config/importexport">
+    <imp:properties>
+      <imp:property name="representationversion" value="3000"/>
+      <imp:property name="dataclass" value="com.bea.wli.sb.services.impl.ServiceDefinitionImpl"/>
+      <imp:property name="isencrypted" value="false"/>
+      <imp:property name="jarentryname" value="EllieMaeNetwork_v1.0/CreditService/Business/CreditCallbackDummyService_bs.BusinessService"/>
+      <imp:property name="extrefs" value="WSDL$EllieMaeNetwork_v1.0$CreditService$Resource$wsdl$CreditExternal"/>
+    </imp:properties>
+  </imp:exportedItemInfo>
+  <imp:exportedItemInfo instanceId="EllieMaeNetwork_v1.0/CreditService/Proxy/_folderdata" typeId="LocationData" xmlns:imp="http://www.bea.com/wli/config/importexport">
+    <imp:properties>
+      <imp:property name="representationversion" value="0"/>
+      <imp:property name="dataclass" value="com.bea.wli.config.project.impl.LocationDataImpl"/>
+      <imp:property name="isencrypted" value="false"/>
+      <imp:property name="jarentryname" value="EllieMaeNetwork_v1.0/CreditService/Proxy/_folderdata.LocationData"/>
+      <imp:property name="custom _special_data_class" value="com.bea.wli.config.project.impl.LocationDataImpl"/>
+    </imp:properties>
+  </imp:exportedItemInfo>
+  <imp:exportedItemInfo instanceId="EllieMaeNetwork_v1.0/CreditServiceMocks/Business/CredcoMock_bs" typeId="BusinessService" xmlns:imp="http://www.bea.com/wli/config/importexport">
+    <imp:properties>
+      <imp:property name="representationversion" value="3000"/>
+      <imp:property name="dataclass" value="com.bea.wli.sb.services.impl.ServiceDefinitionImpl"/>
+      <imp:property name="isencrypted" value="false"/>
+      <imp:property name="jarentryname" value="EllieMaeNetwork_v1.0/CreditServiceMocks/Business/CredcoMock_bs.BusinessService"/>
+      <imp:property name="extrefs" value="WSDL$EllieMaeNetwork_v1.0$CreditServiceMocks$Resource$wsdl$CredcoVPS"/>
+    </imp:properties>
+  </imp:exportedItemInfo>
+  <imp:exportedItemInfo instanceId="EllieMaeNetwork_v1.0/CreditService/Proxy/CreditCallbackService_ps" typeId="ProxyService" xmlns:imp="http://www.bea.com/wli/config/importexport">
+    <imp:properties>
+      <imp:property name="representationversion" value="3000"/>
+      <imp:property name="dataclass" value="com.bea.wli.sb.services.impl.ServiceDefinitionImpl"/>
+      <imp:property name="isencrypted" value="false"/>
+      <imp:property name="jarentryname" value="EllieMaeNetwork_v1.0/CreditService/Proxy/CreditCallbackService_ps.ProxyService"/>
+      <imp:property name="extrefs" value="BusinessService$EllieMaeNetwork_v1.0$CreditService$Business$CreditCallbackDummyService_bs"/>
+      <imp:property name="extrefs" value="BusinessService$Shared_v1.0$SoaLog$Business$SoaLogService_bs"/>
+      <imp:property name="extrefs" value="ProxyService$EllieMaeNetwork_v1.0$CreditService$Proxy$CreditSaveResponse_ps"/>
+      <imp:property name="extrefs" value="WSDL$EllieMaeNetwork_v1.0$CreditService$Resource$wsdl$CreditExternal"/>
+    </imp:properties>
+  </imp:exportedItemInfo>
+  <imp:exportedItemInfo instanceId="EllieMaeNetwork_v1.0/CreditServiceMocks/Resource/xform/RemoveNamespace" typeId="XSLT" xmlns:imp="http://www.bea.com/wli/config/importexport">
+    <imp:properties>
+      <imp:property name="representationversion" value="0"/>
+      <imp:property name="dataclass" value="com.bea.wli.sb.resources.config.impl.XsltEntryDocumentImpl"/>
+      <imp:property name="isencrypted" value="false"/>
+      <imp:property name="jarentryname" value="EllieMaeNetwork_v1.0/CreditServiceMocks/Resource/xform/RemoveNamespace.XSLT"/>
+    </imp:properties>
+  </imp:exportedItemInfo>
+  <imp:exportedItemInfo instanceId="EllieMaeNetwork_v1.0/CreditService/Resource/xsd/VPSEMC" typeId="XMLSchema" xmlns:imp="http://www.bea.com/wli/config/importexport">
+    <imp:properties>
+      <imp:property name="representationversion" value="0"/>
+      <imp:property name="dataclass" value="com.bea.wli.sb.resources.config.impl.SchemaEntryDocumentImpl"/>
+      <imp:property name="isencrypted" value="false"/>
+      <imp:property name="jarentryname" value="EllieMaeNetwork_v1.0/CreditService/Resource/xsd/VPSEMC.XMLSchema"/>
+    </imp:properties>
+  </imp:exportedItemInfo>
+  <imp:exportedItemInfo instanceId="Shared_v1.0/SoaLog/Resource/wsdl/_folderdata" typeId="LocationData" xmlns:imp="http://www.bea.com/wli/config/importexport">
+    <imp:properties>
+      <imp:property name="representationversion" value="0"/>
+      <imp:property name="dataclass" value="com.bea.wli.config.project.impl.LocationDataImpl"/>
+      <imp:property name="isencrypted" value="false"/>
+      <imp:property name="jarentryname" value="Shared_v1.0/SoaLog/Resource/wsdl/_folderdata.LocationData"/>
+      <imp:property name="custom _special_data_class" value="com.bea.wli.config.project.impl.LocationDataImpl"/>
+    </imp:properties>
+  </imp:exportedItemInfo>
+  <imp:exportedItemInfo instanceId="EllieMaeNetwork_v1.0/CreditServiceMocks/Proxy/FactualVPSMock_ps" typeId="ProxyService" xmlns:imp="http://www.bea.com/wli/config/importexport">
+    <imp:properties>
+      <imp:property name="representationversion" value="3000"/>
+      <imp:property name="dataclass" value="com.bea.wli.sb.services.impl.ServiceDefinitionImpl"/>
+      <imp:property name="isencrypted" value="false"/>
+      <imp:property name="jarentryname" value="EllieMaeNetwork_v1.0/CreditServiceMocks/Proxy/FactualVPSMock_ps.ProxyService"/>
+      <imp:property name="extrefs" value="WSDL$EllieMaeNetwork_v1.0$CreditServiceMocks$Resource$wsdl$FactualVPSEMC"/>
+      <imp:property name="extrefs" value="ProxyService$EllieMaeNetwork_v1.0$CreditService$Proxy$CreditCallbackService_ps"/>
+    </imp:properties>
+  </imp:exportedItemInfo>
+  <imp:exportedItemInfo instanceId="Shared_v1.0/SoaLog/Resource/adapters/SoaLogService-or-mappings" typeId="XML" xmlns:imp="http://www.bea.com/wli/config/importexport">
+    <imp:properties>
+      <imp:property name="representationversion" value="0"/>
+      <imp:property name="dataclass" value="com.bea.wli.sb.resources.config.impl.XmlEntryDocumentImpl"/>
+      <imp:property name="isencrypted" value="false"/>
+      <imp:property name="jarentryname" value="Shared_v1.0/SoaLog/Resource/adapters/SoaLogService-or-mappings.XML"/>
+    </imp:properties>
+  </imp:exportedItemInfo>
+  <imp:exportedItemInfo instanceId="EllieMaeNetwork_v1.0/CreditService/Resource/wsdl/CreditResponse" typeId="WSDL" xmlns:imp="http://www.bea.com/wli/config/importexport">
+    <imp:properties>
+      <imp:property name="representationversion" value="0"/>
+      <imp:property name="dataclass" value="com.bea.wli.sb.resources.config.impl.WsdlEntryDocumentImpl"/>
+      <imp:property name="isencrypted" value="false"/>
+      <imp:property name="jarentryname" value="EllieMaeNetwork_v1.0/CreditService/Resource/wsdl/CreditResponse.WSDL"/>
+      <imp:property name="extrefs" value="XMLSchema$EllieMaeNetwork_v1.0$CreditService$Resource$xsd$CreditResponse_table"/>
+    </imp:properties>
+  </imp:exportedItemInfo>
+  <imp:exportedItemInfo instanceId="EllieMaeNetwork_v1.0/CreditServiceMocks/Proxy/_folderdata" typeId="LocationData" xmlns:imp="http://www.bea.com/wli/config/importexport">
+    <imp:properties>
+      <imp:property name="representationversion" value="0"/>
+      <imp:property name="dataclass" value="com.bea.wli.config.project.impl.LocationDataImpl"/>
+      <imp:property name="isencrypted" value="false"/>
+      <imp:property name="jarentryname" value="EllieMaeNetwork_v1.0/CreditServiceMocks/Proxy/_folderdata.LocationData"/>
+      <imp:property name="custom _special_data_class" value="com.bea.wli.config.project.impl.LocationDataImpl"/>
+    </imp:properties>
+  </imp:exportedItemInfo>
+  <imp:exportedItemInfo instanceId="EllieMaeNetwork_v1.0/CreditServiceMocks/Resource/wsdl/FactualVPS" typeId="WSDL" xmlns:imp="http://www.bea.com/wli/config/importexport">
+    <imp:properties>
+      <imp:property name="representationversion" value="0"/>
+      <imp:property name="dataclass" value="com.bea.wli.sb.resources.config.impl.WsdlEntryDocumentImpl"/>
+      <imp:property name="isencrypted" value="false"/>
+      <imp:property name="jarentryname" value="EllieMaeNetwork_v1.0/CreditServiceMocks/Resource/wsdl/FactualVPS.WSDL"/>
+      <imp:property name="extrefs" value="XMLSchema$EllieMaeNetwork_v1.0$CreditService$Resource$xsd$EMCResponseExtended"/>
+      <imp:property name="extrefs" value="XMLSchema$EllieMaeNetwork_v1.0$CreditService$Resource$xsd$EMCRequestExtended"/>
+    </imp:properties>
+  </imp:exportedItemInfo>
+  <imp:exportedItemInfo instanceId="Shared_v1.0/SoaLog/_folderdata" typeId="LocationData" xmlns:imp="http://www.bea.com/wli/config/importexport">
+    <imp:properties>
+      <imp:property name="representationversion" value="0"/>
+      <imp:property name="dataclass" value="com.bea.wli.config.project.impl.LocationDataImpl"/>
+      <imp:property name="isencrypted" value="false"/>
+      <imp:property name="jarentryname" value="Shared_v1.0/SoaLog/_folderdata.LocationData"/>
+      <imp:property name="custom _special_data_class" value="com.bea.wli.config.project.impl.LocationDataImpl"/>
+    </imp:properties>
+  </imp:exportedItemInfo>
+  <imp:exportedItemInfo instanceId="EllieMaeNetwork_v1.0/CreditServiceMocks/Resource/wsdl/FactualVPSEMC" typeId="WSDL" xmlns:imp="http://www.bea.com/wli/config/importexport">
+    <imp:properties>
+      <imp:property name="representationversion" value="0"/>
+      <imp:property name="dataclass" value="com.bea.wli.sb.resources.config.impl.WsdlEntryDocumentImpl"/>
+      <imp:property name="isencrypted" value="false"/>
+      <imp:property name="jarentryname" value="EllieMaeNetwork_v1.0/CreditServiceMocks/Resource/wsdl/FactualVPSEMC.WSDL"/>
+      <imp:property name="extrefs" value="XMLSchema$EllieMaeNetwork_v1.0$CreditService$Resource$xsd$VPSEMC"/>
+    </imp:properties>
+  </imp:exportedItemInfo>
+  <imp:exportedItemInfo instanceId="Shared_v1.0/SoaLog/Proxy/_folderdata" typeId="LocationData" xmlns:imp="http://www.bea.com/wli/config/importexport">
+    <imp:properties>
+      <imp:property name="representationversion" value="0"/>
+      <imp:property name="dataclass" value="com.bea.wli.config.project.impl.LocationDataImpl"/>
+      <imp:property name="isencrypted" value="false"/>
+      <imp:property name="jarentryname" value="Shared_v1.0/SoaLog/Proxy/_folderdata.LocationData"/>
+      <imp:property name="custom _special_data_class" value="com.bea.wli.config.project.impl.LocationDataImpl"/>
+    </imp:properties>
+  </imp:exportedItemInfo>
+  <imp:exportedItemInfo instanceId="EllieMaeNetwork_v1.0/CreditService/Business/_folderdata" typeId="LocationData" xmlns:imp="http://www.bea.com/wli/config/importexport">
+    <imp:properties>
+      <imp:property name="representationversion" value="0"/>
+      <imp:property name="dataclass" value="com.bea.wli.config.project.impl.LocationDataImpl"/>
+      <imp:property name="isencrypted" value="false"/>
+      <imp:property name="jarentryname" value="EllieMaeNetwork_v1.0/CreditService/Business/_folderdata.LocationData"/>
+      <imp:property name="custom _special_data_class" value="com.bea.wli.config.project.impl.LocationDataImpl"/>
+    </imp:properties>
+  </imp:exportedItemInfo>
+  <imp:exportedItemInfo instanceId="EllieMaeNetwork_v1.0/CreditService/Resource/xsd/EMCRequestExtended" typeId="XMLSchema" xmlns:imp="http://www.bea.com/wli/config/importexport">
+    <imp:properties>
+      <imp:property name="representationversion" value="0"/>
+      <imp:property name="dataclass" value="com.bea.wli.sb.resources.config.impl.SchemaEntryDocumentImpl"/>
+      <imp:property name="isencrypted" value="false"/>
+      <imp:property name="jarentryname" value="EllieMaeNetwork_v1.0/CreditService/Resource/xsd/EMCRequestExtended.XMLSchema"/>
+    </imp:properties>
+  </imp:exportedItemInfo>
+  <imp:exportedItemInfo instanceId="Shared_v1.0/SoaLog/Business/_folderdata" typeId="LocationData" xmlns:imp="http://www.bea.com/wli/config/importexport">
+    <imp:properties>
+      <imp:property name="representationversion" value="0"/>
+      <imp:property name="dataclass" value="com.bea.wli.config.project.impl.LocationDataImpl"/>
+      <imp:property name="isencrypted" value="false"/>
+      <imp:property name="jarentryname" value="Shared_v1.0/SoaLog/Business/_folderdata.LocationData"/>
+      <imp:property name="custom _special_data_class" value="com.bea.wli.config.project.impl.LocationDataImpl"/>
+    </imp:properties>
+  </imp:exportedItemInfo>
+  <imp:exportedItemInfo instanceId="EllieMaeNetwork_v1.0/CreditService/Resource/xform/_folderdata" typeId="LocationData" xmlns:imp="http://www.bea.com/wli/config/importexport">
+    <imp:properties>
+      <imp:property name="representationversion" value="0"/>
+      <imp:property name="dataclass" value="com.bea.wli.config.project.impl.LocationDataImpl"/>
+      <imp:property name="isencrypted" value="false"/>
+      <imp:property name="jarentryname" value="EllieMaeNetwork_v1.0/CreditService/Resource/xform/_folderdata.LocationData"/>
+      <imp:property name="custom _special_data_class" value="com.bea.wli.config.project.impl.LocationDataImpl"/>
+    </imp:properties>
+  </imp:exportedItemInfo>
+  <imp:exportedItemInfo instanceId="EllieMaeNetwork_v1.0/CreditServiceMocks/Proxy/MeridianMock_ps" typeId="ProxyService" xmlns:imp="http://www.bea.com/wli/config/importexport">
+    <imp:properties>
+      <imp:property name="representationversion" value="3000"/>
+      <imp:property name="dataclass" value="com.bea.wli.sb.services.impl.ServiceDefinitionImpl"/>
+      <imp:property name="isencrypted" value="false"/>
+      <imp:property name="jarentryname" value="EllieMaeNetwork_v1.0/CreditServiceMocks/Proxy/MeridianMock_ps.ProxyService"/>
+      <imp:property name="extrefs" value="ProxyService$EllieMaeNetwork_v1.0$CreditService$Proxy$CreditCallbackService_ps"/>
+      <imp:property name="extrefs" value="WSDL$EllieMaeNetwork_v1.0$CreditServiceMocks$Resource$wsdl$MeridianVPS"/>
+    </imp:properties>
+  </imp:exportedItemInfo>
+  <imp:exportedItemInfo instanceId="Shared_v1.0/SoaLog/Resource/wsdl/SoaLogService" typeId="WSDL" xmlns:imp="http://www.bea.com/wli/config/importexport">
+    <imp:properties>
+      <imp:property name="representationversion" value="0"/>
+      <imp:property name="dataclass" value="com.bea.wli.sb.resources.config.impl.WsdlEntryDocumentImpl"/>
+      <imp:property name="isencrypted" value="false"/>
+      <imp:property name="jarentryname" value="Shared_v1.0/SoaLog/Resource/wsdl/SoaLogService.WSDL"/>
+      <imp:property name="extrefs" value="XMLSchema$Shared_v1.0$SoaLog$Resource$xsd$SoaLogService_table"/>
+    </imp:properties>
+  </imp:exportedItemInfo>
+  <imp:exportedItemInfo instanceId="EllieMaeNetwork_v1.0/CreditServiceMocks/Business/FactualVPSMock_bs" typeId="BusinessService" xmlns:imp="http://www.bea.com/wli/config/importexport">
+    <imp:properties>
+      <imp:property name="representationversion" value="3000"/>
+      <imp:property name="dataclass" value="com.bea.wli.sb.services.impl.ServiceDefinitionImpl"/>
+      <imp:property name="isencrypted" value="false"/>
+      <imp:property name="jarentryname" value="EllieMaeNetwork_v1.0/CreditServiceMocks/Business/FactualVPSMock_bs.BusinessService"/>
+      <imp:property name="extrefs" value="WSDL$EllieMaeNetwork_v1.0$CreditServiceMocks$Resource$wsdl$FactualVPSEMC"/>
+    </imp:properties>
+  </imp:exportedItemInfo>
+  <imp:exportedItemInfo instanceId="Shared_v1.0/SoaLog/Resource/xsd/_folderdata" typeId="LocationData" xmlns:imp="http://www.bea.com/wli/config/importexport">
+    <imp:properties>
+      <imp:property name="representationversion" value="0"/>
+      <imp:property name="dataclass" value="com.bea.wli.config.project.impl.LocationDataImpl"/>
+      <imp:property name="isencrypted" value="false"/>
+      <imp:property name="jarentryname" value="Shared_v1.0/SoaLog/Resource/xsd/_folderdata.LocationData"/>
+      <imp:property name="custom _special_data_class" value="com.bea.wli.config.project.impl.LocationDataImpl"/>
+    </imp:properties>
+  </imp:exportedItemInfo>
+  <imp:exportedItemInfo instanceId="EllieMaeNetwork_v1.0/CreditService/Resource/xform/RemoveNamespace" typeId="XSLT" xmlns:imp="http://www.bea.com/wli/config/importexport">
+    <imp:properties>
+      <imp:property name="representationversion" value="0"/>
+      <imp:property name="dataclass" value="com.bea.wli.sb.resources.config.impl.XsltEntryDocumentImpl"/>
+      <imp:property name="isencrypted" value="false"/>
+      <imp:property name="jarentryname" value="EllieMaeNetwork_v1.0/CreditService/Resource/xform/RemoveNamespace.XSLT"/>
+    </imp:properties>
+  </imp:exportedItemInfo>
+  <imp:exportedItemInfo instanceId="EllieMaeNetwork_v1.0/CreditServiceMocks/Resource/wsdl/MeridianVPS" typeId="WSDL" xmlns:imp="http://www.bea.com/wli/config/importexport">
+    <imp:properties>
+      <imp:property name="representationversion" value="0"/>
+      <imp:property name="dataclass" value="com.bea.wli.sb.resources.config.impl.WsdlEntryDocumentImpl"/>
+      <imp:property name="isencrypted" value="false"/>
+      <imp:property name="jarentryname" value="EllieMaeNetwork_v1.0/CreditServiceMocks/Resource/wsdl/MeridianVPS.WSDL"/>
+      <imp:property name="extrefs" value="XMLSchema$EllieMaeNetwork_v1.0$CreditService$Resource$xsd$EMCResponseExtended"/>
+      <imp:property name="extrefs" value="XMLSchema$EllieMaeNetwork_v1.0$CreditService$Resource$xsd$EMCRequestExtended"/>
+    </imp:properties>
+  </imp:exportedItemInfo>
+  <imp:exportedItemInfo instanceId="EllieMaeNetwork_v1.0/CreditServiceMocks/Resource/_folderdata" typeId="LocationData" xmlns:imp="http://www.bea.com/wli/config/importexport">
+    <imp:properties>
+      <imp:property name="representationversion" value="0"/>
+      <imp:property name="dataclass" value="com.bea.wli.config.project.impl.LocationDataImpl"/>
+      <imp:property name="isencrypted" value="false"/>
+      <imp:property name="jarentryname" value="EllieMaeNetwork_v1.0/CreditServiceMocks/Resource/_folderdata.LocationData"/>
+      <imp:property name="custom _special_data_class" value="com.bea.wli.config.project.impl.LocationDataImpl"/>
+    </imp:properties>
+  </imp:exportedItemInfo>
+  <imp:exportedItemInfo instanceId="EllieMaeNetwork_v1.0/CreditServiceMocks/Business/FactualMock_bs" typeId="BusinessService" xmlns:imp="http://www.bea.com/wli/config/importexport">
+    <imp:properties>
+      <imp:property name="representationversion" value="3000"/>
+      <imp:property name="dataclass" value="com.bea.wli.sb.services.impl.ServiceDefinitionImpl"/>
+      <imp:property name="isencrypted" value="false"/>
+      <imp:property name="jarentryname" value="EllieMaeNetwork_v1.0/CreditServiceMocks/Business/FactualMock_bs.BusinessService"/>
+      <imp:property name="extrefs" value="WSDL$EllieMaeNetwork_v1.0$CreditServiceMocks$Resource$wsdl$FactualVPS"/>
+    </imp:properties>
+  </imp:exportedItemInfo>
+  <imp:exportedItemInfo instanceId="Shared_v1.0/SoaLog/Resource/adapters/_folderdata" typeId="LocationData" xmlns:imp="http://www.bea.com/wli/config/importexport">
+    <imp:properties>
+      <imp:property name="representationversion" value="0"/>
+      <imp:property name="dataclass" value="com.bea.wli.config.project.impl.LocationDataImpl"/>
+      <imp:property name="isencrypted" value="false"/>
+      <imp:property name="jarentryname" value="Shared_v1.0/SoaLog/Resource/adapters/_folderdata.LocationData"/>
+      <imp:property name="custom _special_data_class" value="com.bea.wli.config.project.impl.LocationDataImpl"/>
+    </imp:properties>
+  </imp:exportedItemInfo>
+  <imp:exportedItemInfo instanceId="EllieMaeNetwork_v1.0/CreditServiceMocks/Resource/xsd/_folderdata" typeId="LocationData" xmlns:imp="http://www.bea.com/wli/config/importexport">
+    <imp:properties>
+      <imp:property name="representationversion" value="0"/>
+      <imp:property name="dataclass" value="com.bea.wli.config.project.impl.LocationDataImpl"/>
+      <imp:property name="isencrypted" value="false"/>
+      <imp:property name="jarentryname" value="EllieMaeNetwork_v1.0/CreditServiceMocks/Resource/xsd/_folderdata.LocationData"/>
+      <imp:property name="custom _special_data_class" value="com.bea.wli.config.project.impl.LocationDataImpl"/>
+    </imp:properties>
+  </imp:exportedItemInfo>
+  <imp:exportedItemInfo instanceId="Shared_v1.0/SoaLog/Resource/adapters/SoaLogService-properties" typeId="XML" xmlns:imp="http://www.bea.com/wli/config/importexport">
+    <imp:properties>
+      <imp:property name="representationversion" value="0"/>
+      <imp:property name="dataclass" value="com.bea.wli.sb.resources.config.impl.XmlEntryDocumentImpl"/>
+      <imp:property name="isencrypted" value="false"/>
+      <imp:property name="jarentryname" value="Shared_v1.0/SoaLog/Resource/adapters/SoaLogService-properties.XML"/>
+    </imp:properties>
+  </imp:exportedItemInfo>
+  <imp:exportedItemInfo instanceId="EllieMaeNetwork_v1.0/CreditServiceMocks/Proxy/EquifaxMock_ps" typeId="ProxyService" xmlns:imp="http://www.bea.com/wli/config/importexport">
+    <imp:properties>
+      <imp:property name="representationversion" value="3000"/>
+      <imp:property name="dataclass" value="com.bea.wli.sb.services.impl.ServiceDefinitionImpl"/>
+      <imp:property name="isencrypted" value="false"/>
+      <imp:property name="jarentryname" value="EllieMaeNetwork_v1.0/CreditServiceMocks/Proxy/EquifaxMock_ps.ProxyService"/>
+      <imp:property name="extrefs" value="WSDL$EllieMaeNetwork_v1.0$CreditServiceMocks$Resource$wsdl$EquifaxVPS"/>
+      <imp:property name="extrefs" value="ProxyService$EllieMaeNetwork_v1.0$CreditService$Proxy$CreditCallbackService_ps"/>
+    </imp:properties>
+  </imp:exportedItemInfo>
+  <imp:exportedItemInfo instanceId="EllieMaeNetwork_v1.0/CreditService/Proxy/CreditSaveResponse_ps" typeId="ProxyService" xmlns:imp="http://www.bea.com/wli/config/importexport">
+    <imp:properties>
+      <imp:property name="representationversion" value="3000"/>
+      <imp:property name="dataclass" value="com.bea.wli.sb.services.impl.ServiceDefinitionImpl"/>
+      <imp:property name="isencrypted" value="false"/>
+      <imp:property name="jarentryname" value="EllieMaeNetwork_v1.0/CreditService/Proxy/CreditSaveResponse_ps.ProxyService"/>
+      <imp:property name="extrefs" value="BusinessService$EllieMaeNetwork_v1.0$CreditService$Business$CreditResponse_db"/>
+      <imp:property name="extrefs" value="WSDL$EllieMaeNetwork_v1.0$CreditService$Resource$wsdl$CreditExternal"/>
+    </imp:properties>
+  </imp:exportedItemInfo>
+  <imp:exportedItemInfo instanceId="EllieMaeNetwork_v1.0/CreditService/Resource/wsdl/CreditResponse_db" typeId="WSDL" xmlns:imp="http://www.bea.com/wli/config/importexport">
+    <imp:properties>
+      <imp:property name="representationversion" value="0"/>
+      <imp:property name="dataclass" value="com.bea.wli.sb.resources.config.impl.WsdlEntryDocumentImpl"/>
+      <imp:property name="isencrypted" value="false"/>
+      <imp:property name="jarentryname" value="EllieMaeNetwork_v1.0/CreditService/Resource/wsdl/CreditResponse_db.WSDL"/>
+      <imp:property name="extrefs" value="WSDL$EllieMaeNetwork_v1.0$CreditService$Resource$wsdl$CreditResponse"/>
+    </imp:properties>
+  </imp:exportedItemInfo>
+  <imp:exportedItemInfo instanceId="EllieMaeNetwork_v1.0/CreditServiceMocks/Business/MeridianVPSMock_bs" typeId="BusinessService" xmlns:imp="http://www.bea.com/wli/config/importexport">
+    <imp:properties>
+      <imp:property name="representationversion" value="3000"/>
+      <imp:property name="dataclass" value="com.bea.wli.sb.services.impl.ServiceDefinitionImpl"/>
+      <imp:property name="isencrypted" value="false"/>
+      <imp:property name="jarentryname" value="EllieMaeNetwork_v1.0/CreditServiceMocks/Business/MeridianVPSMock_bs.BusinessService"/>
+      <imp:property name="extrefs" value="WSDL$EllieMaeNetwork_v1.0$CreditServiceMocks$Resource$wsdl$MeridianVPSEMC"/>
+    </imp:properties>
+  </imp:exportedItemInfo>
+  <imp:exportedItemInfo instanceId="EllieMaeNetwork_v1.0/_projectdata" typeId="LocationData" xmlns:imp="http://www.bea.com/wli/config/importexport">
+    <imp:properties>
+      <imp:property name="representationversion" value="0"/>
+      <imp:property name="dataclass" value="com.bea.wli.config.project.impl.LocationDataImpl"/>
+      <imp:property name="isencrypted" value="false"/>
+      <imp:property name="jarentryname" value="EllieMaeNetwork_v1.0/_projectdata.LocationData"/>
+      <imp:property name="custom _special_data_class" value="com.bea.wli.config.project.impl.LocationDataImpl"/>
+    </imp:properties>
+  </imp:exportedItemInfo>
+  <imp:exportedItemInfo instanceId="EllieMaeNetwork_v1.0/CreditService/Resource/xform/AddAuditTransactionID" typeId="Xquery" xmlns:imp="http://www.bea.com/wli/config/importexport">
+    <imp:properties>
+      <imp:property name="representationversion" value="0"/>
+      <imp:property name="dataclass" value="com.bea.wli.sb.resources.config.impl.XqueryEntryDocumentImpl"/>
+      <imp:property name="isencrypted" value="false"/>
+      <imp:property name="jarentryname" value="EllieMaeNetwork_v1.0/CreditService/Resource/xform/AddAuditTransactionID.Xquery"/>
+    </imp:properties>
+  </imp:exportedItemInfo>
+  <imp:exportedItemInfo instanceId="EllieMaeNetwork_v1.0/CreditServiceMocks/Resource/wsdl/CredcoVPSEMC" typeId="WSDL" xmlns:imp="http://www.bea.com/wli/config/importexport">
+    <imp:properties>
+      <imp:property name="representationversion" value="0"/>
+      <imp:property name="dataclass" value="com.bea.wli.sb.resources.config.impl.WsdlEntryDocumentImpl"/>
+      <imp:property name="isencrypted" value="false"/>
+      <imp:property name="jarentryname" value="EllieMaeNetwork_v1.0/CreditServiceMocks/Resource/wsdl/CredcoVPSEMC.WSDL"/>
+      <imp:property name="extrefs" value="XMLSchema$EllieMaeNetwork_v1.0$CreditService$Resource$xsd$VPSEMC"/>
+    </imp:properties>
+  </imp:exportedItemInfo>
+  <imp:exportedItemInfo instanceId="Shared_v1.0/SoaLog/Business/SoaLogService_bs" typeId="WSDL" xmlns:imp="http://www.bea.com/wli/config/importexport">
+    <imp:properties>
+      <imp:property name="representationversion" value="0"/>
+      <imp:property name="dataclass" value="com.bea.wli.sb.resources.config.impl.WsdlEntryDocumentImpl"/>
+      <imp:property name="isencrypted" value="false"/>
+      <imp:property name="jarentryname" value="Shared_v1.0/SoaLog/Business/SoaLogService_bs.WSDL"/>
+      <imp:property name="extrefs" value="WSDL$Shared_v1.0$SoaLog$Resource$wsdl$SoaLogService"/>
+    </imp:properties>
+  </imp:exportedItemInfo>
+  <imp:exportedItemInfo instanceId="EllieMaeNetwork_v1.0/CreditServiceMocks/Resource/xform/_folderdata" typeId="LocationData" xmlns:imp="http://www.bea.com/wli/config/importexport">
+    <imp:properties>
+      <imp:property name="representationversion" value="0"/>
+      <imp:property name="dataclass" value="com.bea.wli.config.project.impl.LocationDataImpl"/>
+      <imp:property name="isencrypted" value="false"/>
+      <imp:property name="jarentryname" value="EllieMaeNetwork_v1.0/CreditServiceMocks/Resource/xform/_folderdata.LocationData"/>
+      <imp:property name="custom _special_data_class" value="com.bea.wli.config.project.impl.LocationDataImpl"/>
+    </imp:properties>
+  </imp:exportedItemInfo>
+  <imp:exportedItemInfo instanceId="EllieMaeNetwork_v1.0/CreditServiceMocks/Proxy/EquifaxVPSMock_ps" typeId="ProxyService" xmlns:imp="http://www.bea.com/wli/config/importexport">
+    <imp:properties>
+      <imp:property name="representationversion" value="3000"/>
+      <imp:property name="dataclass" value="com.bea.wli.sb.services.impl.ServiceDefinitionImpl"/>
+      <imp:property name="isencrypted" value="false"/>
+      <imp:property name="jarentryname" value="EllieMaeNetwork_v1.0/CreditServiceMocks/Proxy/EquifaxVPSMock_ps.ProxyService"/>
+      <imp:property name="extrefs" value="ProxyService$EllieMaeNetwork_v1.0$CreditService$Proxy$CreditCallbackService_ps"/>
+      <imp:property name="extrefs" value="WSDL$EllieMaeNetwork_v1.0$CreditServiceMocks$Resource$wsdl$EquifaxVPSEMC"/>
+    </imp:properties>
+  </imp:exportedItemInfo>
+  <imp:exportedItemInfo instanceId="EllieMaeNetwork_v1.0/CreditService/Resource/adapters/CreditResponse_db" typeId="JCA" xmlns:imp="http://www.bea.com/wli/config/importexport">
+    <imp:properties>
+      <imp:property name="representationversion" value="0"/>
+      <imp:property name="dataclass" value="com.bea.wli.sb.resources.config.impl.JcaEntryDocumentImpl"/>
+      <imp:property name="isencrypted" value="false"/>
+      <imp:property name="jarentryname" value="EllieMaeNetwork_v1.0/CreditService/Resource/adapters/CreditResponse_db.JCA"/>
+      <imp:property name="extrefs" value="XML$EllieMaeNetwork_v1.0$CreditService$Resource$adapters$CreditResponse-or-mappings"/>
+      <imp:property name="extrefs" value="WSDL$EllieMaeNetwork_v1.0$CreditService$Resource$wsdl$CreditResponse"/>
+    </imp:properties>
+  </imp:exportedItemInfo>
+  <imp:exportedItemInfo instanceId="Shared_v1.0/SoaLog/Resource/_folderdata" typeId="LocationData" xmlns:imp="http://www.bea.com/wli/config/importexport">
+    <imp:properties>
+      <imp:property name="representationversion" value="0"/>
+      <imp:property name="dataclass" value="com.bea.wli.config.project.impl.LocationDataImpl"/>
+      <imp:property name="isencrypted" value="false"/>
+      <imp:property name="jarentryname" value="Shared_v1.0/SoaLog/Resource/_folderdata.LocationData"/>
+      <imp:property name="custom _special_data_class" value="com.bea.wli.config.project.impl.LocationDataImpl"/>
+    </imp:properties>
+  </imp:exportedItemInfo>
+  <imp:exportedItemInfo instanceId="EllieMaeNetwork_v1.0/CreditService/Resource/wsdl/CreditExternal" typeId="WSDL" xmlns:imp="http://www.bea.com/wli/config/importexport">
+    <imp:properties>
+      <imp:property name="representationversion" value="0"/>
+      <imp:property name="dataclass" value="com.bea.wli.sb.resources.config.impl.WsdlEntryDocumentImpl"/>
+      <imp:property name="isencrypted" value="false"/>
+      <imp:property name="jarentryname" value="EllieMaeNetwork_v1.0/CreditService/Resource/wsdl/CreditExternal.WSDL"/>
+      <imp:property name="extrefs" value="XMLSchema$EllieMaeNetwork_v1.0$CreditService$Resource$xsd$EMCResponseExtended"/>
+      <imp:property name="extrefs" value="XMLSchema$EllieMaeNetwork_v1.0$CreditService$Resource$xsd$EMCRequestExtended"/>
+      <imp:property name="extrefs" value="XMLSchema$EllieMaeNetwork_v1.0$CreditService$Resource$xsd$CreditExternalResponse"/>
+    </imp:properties>
+  </imp:exportedItemInfo>
+  <imp:exportedItemInfo instanceId="EllieMaeNetwork_v1.0/CreditService/Resource/xform/CreditServiceConfig" typeId="Xquery" xmlns:imp="http://www.bea.com/wli/config/importexport">
+    <imp:properties>
+      <imp:property name="representationversion" value="0"/>
+      <imp:property name="dataclass" value="com.bea.wli.sb.resources.config.impl.XqueryEntryDocumentImpl"/>
+      <imp:property name="isencrypted" value="false"/>
+      <imp:property name="jarentryname" value="EllieMaeNetwork_v1.0/CreditService/Resource/xform/CreditServiceConfig.Xquery"/>
+    </imp:properties>
+  </imp:exportedItemInfo>
+  <imp:exportedItemInfo instanceId="EllieMaeNetwork_v1.0/CreditService/Resource/wsdl/_folderdata" typeId="LocationData" xmlns:imp="http://www.bea.com/wli/config/importexport">
+    <imp:properties>
+      <imp:property name="representationversion" value="0"/>
+      <imp:property name="dataclass" value="com.bea.wli.config.project.impl.LocationDataImpl"/>
+      <imp:property name="isencrypted" value="false"/>
+      <imp:property name="jarentryname" value="EllieMaeNetwork_v1.0/CreditService/Resource/wsdl/_folderdata.LocationData"/>
+      <imp:property name="custom _special_data_class" value="com.bea.wli.config.project.impl.LocationDataImpl"/>
+    </imp:properties>
+  </imp:exportedItemInfo>
+  <imp:exportedItemInfo instanceId="EllieMaeNetwork_v1.0/CreditServiceMocks/Proxy/MeridianVPSMock_ps" typeId="ProxyService" xmlns:imp="http://www.bea.com/wli/config/importexport">
+    <imp:properties>
+      <imp:property name="representationversion" value="3000"/>
+      <imp:property name="dataclass" value="com.bea.wli.sb.services.impl.ServiceDefinitionImpl"/>
+      <imp:property name="isencrypted" value="false"/>
+      <imp:property name="jarentryname" value="EllieMaeNetwork_v1.0/CreditServiceMocks/Proxy/MeridianVPSMock_ps.ProxyService"/>
+      <imp:property name="extrefs" value="ProxyService$EllieMaeNetwork_v1.0$CreditService$Proxy$CreditCallbackService_ps"/>
+      <imp:property name="extrefs" value="WSDL$EllieMaeNetwork_v1.0$CreditServiceMocks$Resource$wsdl$MeridianVPSEMC"/>
+    </imp:properties>
+  </imp:exportedItemInfo>
+  <imp:exportedItemInfo instanceId="Shared_v1.0/_projectdata" typeId="LocationData" xmlns:imp="http://www.bea.com/wli/config/importexport">
+    <imp:properties>
+      <imp:property name="representationversion" value="0"/>
+      <imp:property name="dataclass" value="com.bea.wli.config.project.impl.LocationDataImpl"/>
+      <imp:property name="isencrypted" value="false"/>
+      <imp:property name="jarentryname" value="Shared_v1.0/_projectdata.LocationData"/>
+      <imp:property name="custom _special_data_class" value="com.bea.wli.config.project.impl.LocationDataImpl"/>
+    </imp:properties>
+  </imp:exportedItemInfo>
+  <imp:exportedItemInfo instanceId="EllieMaeNetwork_v1.0/CreditServiceMocks/Resource/wsdl/MeridianVPSEMC" typeId="WSDL" xmlns:imp="http://www.bea.com/wli/config/importexport">
+    <imp:properties>
+      <imp:property name="representationversion" value="0"/>
+      <imp:property name="dataclass" value="com.bea.wli.sb.resources.config.impl.WsdlEntryDocumentImpl"/>
+      <imp:property name="isencrypted" value="false"/>
+      <imp:property name="jarentryname" value="EllieMaeNetwork_v1.0/CreditServiceMocks/Resource/wsdl/MeridianVPSEMC.WSDL"/>
+      <imp:property name="extrefs" value="XMLSchema$EllieMaeNetwork_v1.0$CreditService$Resource$xsd$VPSEMC"/>
+    </imp:properties>
+  </imp:exportedItemInfo>
+  <imp:exportedItemInfo instanceId="Shared_v1.0/SoaLog/Resource/xsd/SoaLogService_table" typeId="XMLSchema" xmlns:imp="http://www.bea.com/wli/config/importexport">
+    <imp:properties>
+      <imp:property name="representationversion" value="0"/>
+      <imp:property name="dataclass" value="com.bea.wli.sb.resources.config.impl.SchemaEntryDocumentImpl"/>
+      <imp:property name="isencrypted" value="false"/>
+      <imp:property name="jarentryname" value="Shared_v1.0/SoaLog/Resource/xsd/SoaLogService_table.XMLSchema"/>
+    </imp:properties>
+  </imp:exportedItemInfo>
+  <imp:exportedItemInfo instanceId="EllieMaeNetwork_v1.0/CreditService/Resource/adapters/CreditResponse-or-mappings" typeId="XML" xmlns:imp="http://www.bea.com/wli/config/importexport">
+    <imp:properties>
+      <imp:property name="representationversion" value="0"/>
+      <imp:property name="dataclass" value="com.bea.wli.sb.resources.config.impl.XmlEntryDocumentImpl"/>
+      <imp:property name="isencrypted" value="false"/>
+      <imp:property name="jarentryname" value="EllieMaeNetwork_v1.0/CreditService/Resource/adapters/CreditResponse-or-mappings.XML"/>
+    </imp:properties>
+  </imp:exportedItemInfo>
+  <imp:exportedItemInfo instanceId="EllieMaeNetwork_v1.0/CreditServiceMocks/Proxy/CreditClient_ps" typeId="ProxyService" xmlns:imp="http://www.bea.com/wli/config/importexport">
+    <imp:properties>
+      <imp:property name="representationversion" value="3000"/>
+      <imp:property name="dataclass" value="com.bea.wli.sb.services.impl.ServiceDefinitionImpl"/>
+      <imp:property name="isencrypted" value="false"/>
+      <imp:property name="jarentryname" value="EllieMaeNetwork_v1.0/CreditServiceMocks/Proxy/CreditClient_ps.ProxyService"/>
+      <imp:property name="extrefs" value="WSDL$EllieMaeNetwork_v1.0$CreditService$Resource$wsdl$CreditExternal"/>
+    </imp:properties>
+  </imp:exportedItemInfo>
+  <imp:exportedItemInfo instanceId="EllieMaeNetwork_v1.0/CreditService/Resource/wsdl/CreditGetResponse" typeId="WSDL" xmlns:imp="http://www.bea.com/wli/config/importexport">
+    <imp:properties>
+      <imp:property name="representationversion" value="0"/>
+      <imp:property name="dataclass" value="com.bea.wli.sb.resources.config.impl.WsdlEntryDocumentImpl"/>
+      <imp:property name="isencrypted" value="false"/>
+      <imp:property name="jarentryname" value="EllieMaeNetwork_v1.0/CreditService/Resource/wsdl/CreditGetResponse.WSDL"/>
+      <imp:property name="extrefs" value="XMLSchema$EllieMaeNetwork_v1.0$CreditService$Resource$xsd$CreditResponse_table"/>
+    </imp:properties>
+  </imp:exportedItemInfo>
+  <imp:exportedItemInfo instanceId="EllieMaeNetwork_v1.0/CreditServiceMocks/Business/_folderdata" typeId="LocationData" xmlns:imp="http://www.bea.com/wli/config/importexport">
+    <imp:properties>
+      <imp:property name="representationversion" value="0"/>
+      <imp:property name="dataclass" value="com.bea.wli.config.project.impl.LocationDataImpl"/>
+      <imp:property name="isencrypted" value="false"/>
+      <imp:property name="jarentryname" value="EllieMaeNetwork_v1.0/CreditServiceMocks/Business/_folderdata.LocationData"/>
+      <imp:property name="custom _special_data_class" value="com.bea.wli.config.project.impl.LocationDataImpl"/>
+    </imp:properties>
+  </imp:exportedItemInfo>
+  <imp:exportedItemInfo instanceId="EllieMaeNetwork_v1.0/CreditService/Resource/xsd/CreditResponse_table" typeId="XMLSchema" xmlns:imp="http://www.bea.com/wli/config/importexport">
+    <imp:properties>
+      <imp:property name="representationversion" value="0"/>
+      <imp:property name="dataclass" value="com.bea.wli.sb.resources.config.impl.SchemaEntryDocumentImpl"/>
+      <imp:property name="isencrypted" value="false"/>
+      <imp:property name="jarentryname" value="EllieMaeNetwork_v1.0/CreditService/Resource/xsd/CreditResponse_table.XMLSchema"/>
+    </imp:properties>
+  </imp:exportedItemInfo>
+  <imp:exportedItemInfo instanceId="EllieMaeNetwork_v1.0/CreditService/Business/CreditResponse_db" typeId="BusinessService" xmlns:imp="http://www.bea.com/wli/config/importexport">
+    <imp:properties>
+      <imp:property name="representationversion" value="3000"/>
+      <imp:property name="dataclass" value="com.bea.wli.sb.services.impl.ServiceDefinitionImpl"/>
+      <imp:property name="isencrypted" value="false"/>
+      <imp:property name="jarentryname" value="EllieMaeNetwork_v1.0/CreditService/Business/CreditResponse_db.BusinessService"/>
+      <imp:property name="extrefs" value="JCA$EllieMaeNetwork_v1.0$CreditService$Resource$adapters$CreditResponse_db"/>
+      <imp:property name="extrefs" value="WSDL$EllieMaeNetwork_v1.0$CreditService$Resource$wsdl$CreditResponse_db"/>
+    </imp:properties>
+  </imp:exportedItemInfo>
+  <imp:exportedItemInfo instanceId="EllieMaeNetwork_v1.0/CreditServiceMocks/_folderdata" typeId="LocationData" xmlns:imp="http://www.bea.com/wli/config/importexport">
+    <imp:properties>
+      <imp:property name="representationversion" value="0"/>
+      <imp:property name="dataclass" value="com.bea.wli.config.project.impl.LocationDataImpl"/>
+      <imp:property name="isencrypted" value="false"/>
+      <imp:property name="jarentryname" value="EllieMaeNetwork_v1.0/CreditServiceMocks/_folderdata.LocationData"/>
+      <imp:property name="custom _special_data_class" value="com.bea.wli.config.project.impl.LocationDataImpl"/>
+    </imp:properties>
+  </imp:exportedItemInfo>
+  <imp:exportedItemInfo instanceId="EllieMaeNetwork_v1.0/CreditService/Resource/xsd/EMCRequest" typeId="XMLSchema" xmlns:imp="http://www.bea.com/wli/config/importexport">
+    <imp:properties>
+      <imp:property name="representationversion" value="0"/>
+      <imp:property name="dataclass" value="com.bea.wli.sb.resources.config.impl.SchemaEntryDocumentImpl"/>
+      <imp:property name="isencrypted" value="false"/>
+      <imp:property name="jarentryname" value="EllieMaeNetwork_v1.0/CreditService/Resource/xsd/EMCRequest.XMLSchema"/>
+    </imp:properties>
+  </imp:exportedItemInfo>
+  <imp:exportedItemInfo instanceId="EllieMaeNetwork_v1.0/CreditServiceMocks/Proxy/CredcoMock_ps" typeId="ProxyService" xmlns:imp="http://www.bea.com/wli/config/importexport">
+    <imp:properties>
+      <imp:property name="representationversion" value="3000"/>
+      <imp:property name="dataclass" value="com.bea.wli.sb.services.impl.ServiceDefinitionImpl"/>
+      <imp:property name="isencrypted" value="false"/>
+      <imp:property name="jarentryname" value="EllieMaeNetwork_v1.0/CreditServiceMocks/Proxy/CredcoMock_ps.ProxyService"/>
+      <imp:property name="extrefs" value="ProxyService$EllieMaeNetwork_v1.0$CreditService$Proxy$CreditCallbackService_ps"/>
+      <imp:property name="extrefs" value="WSDL$EllieMaeNetwork_v1.0$CreditServiceMocks$Resource$wsdl$CredcoVPS"/>
+    </imp:properties>
+  </imp:exportedItemInfo>
+  <imp:exportedItemInfo instanceId="EllieMaeNetwork_v1.0/CreditService/Resource/xsd/CreditServiceConfig" typeId="XMLSchema" xmlns:imp="http://www.bea.com/wli/config/importexport">
+    <imp:properties>
+      <imp:property name="representationversion" value="0"/>
+      <imp:property name="dataclass" value="com.bea.wli.sb.resources.config.impl.SchemaEntryDocumentImpl"/>
+      <imp:property name="isencrypted" value="false"/>
+      <imp:property name="jarentryname" value="EllieMaeNetwork_v1.0/CreditService/Resource/xsd/CreditServiceConfig.XMLSchema"/>
+    </imp:properties>
+  </imp:exportedItemInfo>
+  <imp:exportedItemInfo instanceId="EllieMaeNetwork_v1.0/CreditServiceMocks/Business/CredcoVPSMock_bs" typeId="BusinessService" xmlns:imp="http://www.bea.com/wli/config/importexport">
+    <imp:properties>
+      <imp:property name="representationversion" value="3000"/>
+      <imp:property name="dataclass" value="com.bea.wli.sb.services.impl.ServiceDefinitionImpl"/>
+      <imp:property name="isencrypted" value="false"/>
+      <imp:property name="jarentryname" value="EllieMaeNetwork_v1.0/CreditServiceMocks/Business/CredcoVPSMock_bs.BusinessService"/>
+      <imp:property name="extrefs" value="WSDL$EllieMaeNetwork_v1.0$CreditServiceMocks$Resource$wsdl$CredcoVPSEMC"/>
+    </imp:properties>
+  </imp:exportedItemInfo>
+  <imp:exportedItemInfo instanceId="EllieMaeNetwork_v1.0/CreditServiceMocks/Resource/wsdl/EquifaxVPSEMC" typeId="WSDL" xmlns:imp="http://www.bea.com/wli/config/importexport">
+    <imp:properties>
+      <imp:property name="representationversion" value="0"/>
+      <imp:property name="dataclass" value="com.bea.wli.sb.resources.config.impl.WsdlEntryDocumentImpl"/>
+      <imp:property name="isencrypted" value="false"/>
+      <imp:property name="jarentryname" value="EllieMaeNetwork_v1.0/CreditServiceMocks/Resource/wsdl/EquifaxVPSEMC.WSDL"/>
+      <imp:property name="extrefs" value="XMLSchema$EllieMaeNetwork_v1.0$CreditService$Resource$xsd$VPSEMC"/>
+    </imp:properties>
+  </imp:exportedItemInfo>
+  <imp:exportedItemInfo instanceId="EllieMaeNetwork_v1.0/CreditService/Proxy/CreditService_ps" typeId="ProxyService" xmlns:imp="http://www.bea.com/wli/config/importexport">
+    <imp:properties>
+      <imp:property name="representationversion" value="3000"/>
+      <imp:property name="dataclass" value="com.bea.wli.sb.services.impl.ServiceDefinitionImpl"/>
+      <imp:property name="isencrypted" value="false"/>
+      <imp:property name="jarentryname" value="EllieMaeNetwork_v1.0/CreditService/Proxy/CreditService_ps.ProxyService"/>
+      <imp:property name="extrefs" value="Xquery$EllieMaeNetwork_v1.0$CreditService$Resource$xform$CreditServiceConfig"/>
+      <imp:property name="extrefs" value="Xquery$EllieMaeNetwork_v1.0$CreditService$Resource$xform$AddAuditTransactionID"/>
+      <imp:property name="extrefs" value="Xquery$EllieMaeNetwork_v1.0$CreditService$Resource$xform$EMCtoVPS"/>
+      <imp:property name="extrefs" value="XMLSchema$EllieMaeNetwork_v1.0$CreditService$Resource$xsd$EMCRequestExtended"/>
+      <imp:property name="extrefs" value="BusinessService$Shared_v1.0$SoaLog$Business$SoaLogService_bs"/>
+      <imp:property name="extrefs" value="WSDL$EllieMaeNetwork_v1.0$CreditService$Resource$wsdl$CreditExternal"/>
+    </imp:properties>
+  </imp:exportedItemInfo>
+  <imp:exportedItemInfo instanceId="Shared_v1.0/SoaLog/Business/SoaLogService_bs" typeId="BusinessService" xmlns:imp="http://www.bea.com/wli/config/importexport">
+    <imp:properties>
+      <imp:property name="representationversion" value="3000"/>
+      <imp:property name="dataclass" value="com.bea.wli.sb.services.impl.ServiceDefinitionImpl"/>
+      <imp:property name="isencrypted" value="false"/>
+      <imp:property name="jarentryname" value="Shared_v1.0/SoaLog/Business/SoaLogService_bs.BusinessService"/>
+      <imp:property name="extrefs" value="WSDL$Shared_v1.0$SoaLog$Business$SoaLogService_bs"/>
+      <imp:property name="extrefs" value="JCA$Shared_v1.0$SoaLog$Resource$adapters$SoaLogService_db"/>
+    </imp:properties>
+  </imp:exportedItemInfo>
+  <imp:exportedItemInfo instanceId="EllieMaeNetwork_v1.0/CreditServiceMocks/Proxy/CredcoVPSMock_ps" typeId="ProxyService" xmlns:imp="http://www.bea.com/wli/config/importexport">
+    <imp:properties>
+      <imp:property name="representationversion" value="3000"/>
+      <imp:property name="dataclass" value="com.bea.wli.sb.services.impl.ServiceDefinitionImpl"/>
+      <imp:property name="isencrypted" value="false"/>
+      <imp:property name="jarentryname" value="EllieMaeNetwork_v1.0/CreditServiceMocks/Proxy/CredcoVPSMock_ps.ProxyService"/>
+      <imp:property name="extrefs" value="WSDL$EllieMaeNetwork_v1.0$CreditServiceMocks$Resource$wsdl$CredcoVPSEMC"/>
+      <imp:property name="extrefs" value="ProxyService$EllieMaeNetwork_v1.0$CreditService$Proxy$CreditCallbackService_ps"/>
+      <imp:property name="extrefs" value="XSLT$EllieMaeNetwork_v1.0$CreditServiceMocks$Resource$xform$RemoveNamespace"/>
+    </imp:properties>
+  </imp:exportedItemInfo>
+  <imp:exportedItemInfo instanceId="EllieMaeNetwork_v1.0/CreditServiceMocks/Resource/xsd/VPSEMC" typeId="XMLSchema" xmlns:imp="http://www.bea.com/wli/config/importexport">
+    <imp:properties>
+      <imp:property name="representationversion" value="0"/>
+      <imp:property name="dataclass" value="com.bea.wli.sb.resources.config.impl.SchemaEntryDocumentImpl"/>
+      <imp:property name="isencrypted" value="false"/>
+      <imp:property name="jarentryname" value="EllieMaeNetwork_v1.0/CreditServiceMocks/Resource/xsd/VPSEMC.XMLSchema"/>
+    </imp:properties>
+  </imp:exportedItemInfo>
+  <imp:exportedItemInfo instanceId="EllieMaeNetwork_v1.0/CreditServiceMocks/Proxy/FactualMock_ps" typeId="ProxyService" xmlns:imp="http://www.bea.com/wli/config/importexport">
+    <imp:properties>
+      <imp:property name="representationversion" value="3000"/>
+      <imp:property name="dataclass" value="com.bea.wli.sb.services.impl.ServiceDefinitionImpl"/>
+      <imp:property name="isencrypted" value="false"/>
+      <imp:property name="jarentryname" value="EllieMaeNetwork_v1.0/CreditServiceMocks/Proxy/FactualMock_ps.ProxyService"/>
+      <imp:property name="extrefs" value="ProxyService$EllieMaeNetwork_v1.0$CreditService$Proxy$CreditCallbackService_ps"/>
+      <imp:property name="extrefs" value="WSDL$EllieMaeNetwork_v1.0$CreditServiceMocks$Resource$wsdl$FactualVPS"/>
+    </imp:properties>
+  </imp:exportedItemInfo>
+  <imp:exportedItemInfo instanceId="EllieMaeNetwork_v1.0/CreditServiceMocks/Resource/wsdl/EquifaxVPS" typeId="WSDL" xmlns:imp="http://www.bea.com/wli/config/importexport">
+    <imp:properties>
+      <imp:property name="representationversion" value="0"/>
+      <imp:property name="dataclass" value="com.bea.wli.sb.resources.config.impl.WsdlEntryDocumentImpl"/>
+      <imp:property name="isencrypted" value="false"/>
+      <imp:property name="jarentryname" value="EllieMaeNetwork_v1.0/CreditServiceMocks/Resource/wsdl/EquifaxVPS.WSDL"/>
+      <imp:property name="extrefs" value="XMLSchema$EllieMaeNetwork_v1.0$CreditService$Resource$xsd$EMCResponseExtended"/>
+      <imp:property name="extrefs" value="XMLSchema$EllieMaeNetwork_v1.0$CreditService$Resource$xsd$EMCRequestExtended"/>
+    </imp:properties>
+  </imp:exportedItemInfo>
+  <imp:exportedItemInfo instanceId="EllieMaeNetwork_v1.0/CreditService/Resource/adapters/_folderdata" typeId="LocationData" xmlns:imp="http://www.bea.com/wli/config/importexport">
+    <imp:properties>
+      <imp:property name="representationversion" value="0"/>
+      <imp:property name="dataclass" value="com.bea.wli.config.project.impl.LocationDataImpl"/>
+      <imp:property name="isencrypted" value="false"/>
+      <imp:property name="jarentryname" value="EllieMaeNetwork_v1.0/CreditService/Resource/adapters/_folderdata.LocationData"/>
+      <imp:property name="custom _special_data_class" value="com.bea.wli.config.project.impl.LocationDataImpl"/>
+    </imp:properties>
+  </imp:exportedItemInfo>
+  <imp:exportedItemInfo instanceId="EllieMaeNetwork_v1.0/CreditServiceMocks/Business/EquifaxVPSMock_bs" typeId="BusinessService" xmlns:imp="http://www.bea.com/wli/config/importexport">
+    <imp:properties>
+      <imp:property name="representationversion" value="3000"/>
+      <imp:property name="dataclass" value="com.bea.wli.sb.services.impl.ServiceDefinitionImpl"/>
+      <imp:property name="isencrypted" value="false"/>
+      <imp:property name="jarentryname" value="EllieMaeNetwork_v1.0/CreditServiceMocks/Business/EquifaxVPSMock_bs.BusinessService"/>
+      <imp:property name="extrefs" value="WSDL$EllieMaeNetwork_v1.0$CreditServiceMocks$Resource$wsdl$EquifaxVPSEMC"/>
+    </imp:properties>
+  </imp:exportedItemInfo>
+  <imp:exportedItemInfo instanceId="EllieMaeNetwork_v1.0/CreditService/Resource/_folderdata" typeId="LocationData" xmlns:imp="http://www.bea.com/wli/config/importexport">
+    <imp:properties>
+      <imp:property name="representationversion" value="0"/>
+      <imp:property name="dataclass" value="com.bea.wli.config.project.impl.LocationDataImpl"/>
+      <imp:property name="isencrypted" value="false"/>
+      <imp:property name="jarentryname" value="EllieMaeNetwork_v1.0/CreditService/Resource/_folderdata.LocationData"/>
+      <imp:property name="custom _special_data_class" value="com.bea.wli.config.project.impl.LocationDataImpl"/>
+    </imp:properties>
+  </imp:exportedItemInfo>
+  <imp:exportedItemInfo instanceId="EllieMaeNetwork_v1.0/CreditServiceMocks/Business/EquifaxMock_bs" typeId="BusinessService" xmlns:imp="http://www.bea.com/wli/config/importexport">
+    <imp:properties>
+      <imp:property name="representationversion" value="3000"/>
+      <imp:property name="dataclass" value="com.bea.wli.sb.services.impl.ServiceDefinitionImpl"/>
+      <imp:property name="isencrypted" value="false"/>
+      <imp:property name="jarentryname" value="EllieMaeNetwork_v1.0/CreditServiceMocks/Business/EquifaxMock_bs.BusinessService"/>
+      <imp:property name="extrefs" value="WSDL$EllieMaeNetwork_v1.0$CreditServiceMocks$Resource$wsdl$EquifaxVPS"/>
+    </imp:properties>
+  </imp:exportedItemInfo>
+  <imp:exportedItemInfo instanceId="EllieMaeNetwork_v1.0/CreditService/_folderdata" typeId="LocationData" xmlns:imp="http://www.bea.com/wli/config/importexport">
+    <imp:properties>
+      <imp:property name="representationversion" value="0"/>
+      <imp:property name="dataclass" value="com.bea.wli.config.project.impl.LocationDataImpl"/>
+      <imp:property name="isencrypted" value="false"/>
+      <imp:property name="jarentryname" value="EllieMaeNetwork_v1.0/CreditService/_folderdata.LocationData"/>
+      <imp:property name="custom _special_data_class" value="com.bea.wli.config.project.impl.LocationDataImpl"/>
+    </imp:properties>
+  </imp:exportedItemInfo>
+  <imp:exportedItemInfo instanceId="EllieMaeNetwork_v1.0/CreditService/Resource/xsd/_folderdata" typeId="LocationData" xmlns:imp="http://www.bea.com/wli/config/importexport">
+    <imp:properties>
+      <imp:property name="representationversion" value="0"/>
+      <imp:property name="dataclass" value="com.bea.wli.config.project.impl.LocationDataImpl"/>
+      <imp:property name="isencrypted" value="false"/>
+      <imp:property name="jarentryname" value="EllieMaeNetwork_v1.0/CreditService/Resource/xsd/_folderdata.LocationData"/>
+      <imp:property name="custom _special_data_class" value="com.bea.wli.config.project.impl.LocationDataImpl"/>
+    </imp:properties>
+  </imp:exportedItemInfo>
+  <imp:exportedItemInfo instanceId="EllieMaeNetwork_v1.0/CreditServiceMocks/Resource/wsdl/_folderdata" typeId="LocationData" xmlns:imp="http://www.bea.com/wli/config/importexport">
+    <imp:properties>
+      <imp:property name="representationversion" value="0"/>
+      <imp:property name="dataclass" value="com.bea.wli.config.project.impl.LocationDataImpl"/>
+      <imp:property name="isencrypted" value="false"/>
+      <imp:property name="jarentryname" value="EllieMaeNetwork_v1.0/CreditServiceMocks/Resource/wsdl/_folderdata.LocationData"/>
+      <imp:property name="custom _special_data_class" value="com.bea.wli.config.project.impl.LocationDataImpl"/>
+    </imp:properties>
+  </imp:exportedItemInfo>
+  <imp:exportedItemInfo instanceId="Shared_v1.0/SoaLog/Proxy/SoaLog_ps" typeId="ProxyService" xmlns:imp="http://www.bea.com/wli/config/importexport">
+    <imp:properties>
+      <imp:property name="representationversion" value="3000"/>
+      <imp:property name="dataclass" value="com.bea.wli.sb.services.impl.ServiceDefinitionImpl"/>
+      <imp:property name="isencrypted" value="false"/>
+      <imp:property name="jarentryname" value="Shared_v1.0/SoaLog/Proxy/SoaLog_ps.ProxyService"/>
+      <imp:property name="extrefs" value="WSDL$Shared_v1.0$SoaLog$Business$SoaLogService_bs"/>
+      <imp:property name="extrefs" value="BusinessService$Shared_v1.0$SoaLog$Business$SoaLogService_bs"/>
+    </imp:properties>
+  </imp:exportedItemInfo>
+  <imp:exportedItemInfo instanceId="EllieMaeNetwork_v1.0/CreditServiceMocks/Business/MeridianMock_bs" typeId="BusinessService" xmlns:imp="http://www.bea.com/wli/config/importexport">
+    <imp:properties>
+      <imp:property name="representationversion" value="3000"/>
+      <imp:property name="dataclass" value="com.bea.wli.sb.services.impl.ServiceDefinitionImpl"/>
+      <imp:property name="isencrypted" value="false"/>
+      <imp:property name="jarentryname" value="EllieMaeNetwork_v1.0/CreditServiceMocks/Business/MeridianMock_bs.BusinessService"/>
+      <imp:property name="extrefs" value="WSDL$EllieMaeNetwork_v1.0$CreditServiceMocks$Resource$wsdl$MeridianVPS"/>
+    </imp:properties>
+  </imp:exportedItemInfo>
+</xml-fragment>

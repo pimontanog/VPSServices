@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:wsdlEntry xmlns:con="http://www.bea.com/wli/sb/resources/config">
+    <con:wsdl><![CDATA[<?binding.jca SoaLogService_db.jca?>
+<wsdl:definitions name="SoaLogService" targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/SOAArtifacts/Project1/SoaLogService" xmlns:tns="http://xmlns.oracle.com/pcbpel/adapter/db/SOAArtifacts/Project1/SoaLogService" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:plt="http://schemas.xmlsoap.org/ws/2003/05/partner-link/" xmlns:top="http://xmlns.oracle.com/pcbpel/adapter/db/top/SoaLogService">
+    <plt:partnerLinkType name="SoaLogService_plt">
+        <plt:role name="SoaLogService_role">
+            <plt:portType name="tns:SoaLogService_ptt"/>
+        </plt:role>
+    </plt:partnerLinkType>
+    <wsdl:types>
+        <schema xmlns="http://www.w3.org/2001/XMLSchema">
+            <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/SoaLogService" schemaLocation="../xsd/SoaLogService_table.xsd"/>
+        </schema>
+    </wsdl:types>
+    <wsdl:message name="SoalogCollection_msg">
+        <wsdl:part name="SoalogCollection" element="top:SoalogCollection"/>
+    </wsdl:message>
+    <wsdl:portType name="SoaLogService_ptt">
+        <wsdl:operation name="merge">
+            <wsdl:input message="tns:SoalogCollection_msg"/>
+        </wsdl:operation>
+        <wsdl:operation name="insert">
+            <wsdl:input message="tns:SoalogCollection_msg"/>
+        </wsdl:operation>
+        <wsdl:operation name="update">
+            <wsdl:input message="tns:SoalogCollection_msg"/>
+        </wsdl:operation>
+        <wsdl:operation name="delete">
+            <wsdl:input message="tns:SoalogCollection_msg"/>
+        </wsdl:operation>
+    </wsdl:portType>
+</wsdl:definitions>]]></con:wsdl>
+    <con:dependencies>
+        <con:schemaRef isInclude="false" schemaLocation="../xsd/SoaLogService_table.xsd" namespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/SoaLogService" ref="Shared_v1.0/SoaLog/Resource/xsd/SoaLogService_table"/>
+    </con:dependencies>
+    <con:targetNamespace>http://xmlns.oracle.com/pcbpel/adapter/db/SOAArtifacts/Project1/SoaLogService</con:targetNamespace>
+</con:wsdlEntry>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:jcaEntry xmlns:con="http://www.bea.com/wli/sb/resources/config">
+    <con:jca><![CDATA[<adapter-config name="SoaLogService" adapter="Database Adapter" wsdlLocation="../wsdl/SoaLogService.wsdl" xmlns="http://platform.integration.oracle/blocks/adapter/fw/metadata">
+  
+  <connection-factory location="eis/DB/ServiceLayerDB" UIConnectionName="ServiceLayerDB" adapterRef=""/>
+  <endpoint-interaction portType="SoaLogService_ptt" operation="merge">
+    <interaction-spec className="oracle.tip.adapter.db.DBWriteInteractionSpec">
+      <property name="DescriptorName" value="SoaLogService.Soalog"/>
+      <property name="DmlType" value="merge"/>
+      <property name="MappingsMetaDataURL" value="SoaLogService-or-mappings.xml"/>
+      <property name="OptimizeMerge" value="true"/>
+      <property name="DetectOmissions" value="true"/>
+      <property name="GetActiveUnitOfWork" value="false"/>
+    </interaction-spec>
+  </endpoint-interaction>
+
+  <endpoint-interaction portType="SoaLogService_ptt" operation="insert">
+    <interaction-spec className="oracle.tip.adapter.db.DBWriteInteractionSpec">
+      <property name="DescriptorName" value="SoaLogService.Soalog"/>
+      <property name="DmlType" value="insert"/>
+      <property name="MappingsMetaDataURL" value="SoaLogService-or-mappings.xml"/>
+      <property name="OptimizeMerge" value="true"/>
+      <property name="DetectOmissions" value="true"/>
+      <property name="GetActiveUnitOfWork" value="false"/>
+    </interaction-spec>
+  </endpoint-interaction>
+
+  <endpoint-interaction portType="SoaLogService_ptt" operation="update">
+    <interaction-spec className="oracle.tip.adapter.db.DBWriteInteractionSpec">
+      <property name="DescriptorName" value="SoaLogService.Soalog"/>
+      <property name="DmlType" value="update"/>
+      <property name="MappingsMetaDataURL" value="SoaLogService-or-mappings.xml"/>
+      <property name="OptimizeMerge" value="true"/>
+      <property name="DetectOmissions" value="true"/>
+      <property name="GetActiveUnitOfWork" value="false"/>
+    </interaction-spec>
+  </endpoint-interaction>
+
+  <endpoint-interaction portType="SoaLogService_ptt" operation="delete">
+    <interaction-spec className="oracle.tip.adapter.db.DBWriteInteractionSpec">
+      <property name="DescriptorName" value="SoaLogService.Soalog"/>
+      <property name="DmlType" value="delete"/>
+      <property name="DetectOmissions" value="true"/>
+      <property name="OptimizeMerge" value="true"/>
+      <property name="MappingsMetaDataURL" value="SoaLogService-or-mappings.xml"/>
+      <property name="GetActiveUnitOfWork" value="false"/>
+    </interaction-spec>
+  </endpoint-interaction>
+
+</adapter-config>]]></con:jca>
+    <con:jcaDependency>
+        <con:wsdlRef wsdlLocation="../wsdl/SoaLogService.wsdl" ref="Shared_v1.0/SoaLog/Resource/wsdl/SoaLogService"/>
+        <con:toplinkRef toplinkFile="SoaLogService-or-mappings.xml" ref="Shared_v1.0/SoaLog/Resource/adapters/SoaLogService-or-mappings"/>
+    </con:jcaDependency>
+</con:jcaEntry>

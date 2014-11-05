@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xml-fragment xmlns:ser="http://www.bea.com/wli/sb/services" xmlns:tran="http://www.bea.com/wli/sb/transports" xmlns:env="http://www.bea.com/wli/config/env" xmlns:http="http://www.bea.com/wli/sb/transports/http" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://www.bea.com/wli/sb/pipeline/config" xmlns:con1="http://www.bea.com/wli/sb/stages/config" xmlns:con2="http://www.bea.com/wli/sb/stages/transform/config" xmlns:con3="http://www.bea.com/wli/sb/stages/routing/config" xmlns:con4="http://www.bea.com/wli/sb/stages/publish/config">
+  <ser:coreEntry isProxy="true" isEnabled="true" isTracingEnabled="false">
+    <ser:binding type="SOAP" isSoap12="false" xsi:type="con:SoapBindingType" xmlns:con="http://www.bea.com/wli/sb/services/bindings/config">
+      <con:wsdl ref="EllieMaeNetwork_v1.0/CreditService/Resource/wsdl/CreditGetResponse"/>
+      <con:binding>
+        <con:name>CreditGetResponseSOAP</con:name>
+        <con:namespace>http://www.elliemae.com/credit/CreditGetResponse/</con:namespace>
+      </con:binding>
+      <con:selector type="SOAP body"/>
+    </ser:binding>
+    <ser:monitoring isEnabled="false">
+      <ser:aggregationInterval>10</ser:aggregationInterval>
+      <ser:pipelineMonitoringLevel>Pipeline</ser:pipelineMonitoringLevel>
+    </ser:monitoring>
+    <ser:reporting>true</ser:reporting>
+    <ser:logging isEnabled="true">
+      <ser:logLevel>debug</ser:logLevel>
+    </ser:logging>
+    <ser:sla-alerting isEnabled="true">
+      <ser:alertLevel>normal</ser:alertLevel>
+    </ser:sla-alerting>
+    <ser:pipeline-alerting isEnabled="true">
+      <ser:alertLevel>normal</ser:alertLevel>
+    </ser:pipeline-alerting>
+    <ser:ws-policy>
+      <ser:binding-mode>wsdl-policy-attachments</ser:binding-mode>
+    </ser:ws-policy>
+  </ser:coreEntry>
+  <ser:endpointConfig>
+    <tran:provider-id>http</tran:provider-id>
+    <tran:inbound>true</tran:inbound>
+    <tran:URI>
+      <env:value>/EllieMaeNetwork_v1.0/CreditService/Proxy/CreditPullResponse_ps</env:value>
+    </tran:URI>
+    <tran:inbound-properties/>
+    <tran:all-headers>false</tran:all-headers>
+    <tran:provider-specific>
+      <http:inbound-properties/>
+    </tran:provider-specific>
+  </ser:endpointConfig>
+  <ser:router>
+    <con:pipeline type="request" name="MsgIDPipeline_request">
+      <con:stage name="GetVars">
+        <con:context>
+          <con1:varNsDecl namespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/CreditResponse" prefix="cred"/>
+        </con:context>
+        <con:actions>
+          <con2:assign varName="MsgID">
+            <con1:id>_ActionId-8328031186785315309--2c07bb09.1493365b156.-7f20</con1:id>
+            <con2:expr>
+              <con1:xqueryText>$body/cred:CreditResponseSelect_p1_messageidInputParameters/cred:p1_messageid/text()</con1:xqueryText>
+            </con2:expr>
+          </con2:assign>
+        </con:actions>
+      </con:stage>
+    </con:pipeline>
+    <con:pipeline type="response" name="MsgIDPipeline_response">
+      <con:stage name="UpdatePullTimestamp">
+        <con:context>
+          <con1:varNsDecl namespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/CreditResponse" prefix="cred"/>
+        </con:context>
+        <con:actions>
+          <con2:ifThenElse>
+            <con1:id>_ActionId-1681306382093559316-1ce67197.14938a96f30.-7e82</con1:id>
+            <con2:case>
+              <con2:condition>
+                <con1:xqueryText>fn:count($body/cred:CreditResponseCollection/cred:CreditResponse/cred:PullTimestamp/text())>0</con1:xqueryText>
+              </con2:condition>
+              <con2:actions/>
+            </con2:case>
+            <con2:default>
+              <con4:route>
+                <con1:id>_ActionId-1681306382093559316-1ce67197.14938a96f30.-7e27</con1:id>
+                <con4:service ref="EllieMaeNetwork_v1.0/CreditService/Business/CreditResponse_db" xsi:type="ref:BusinessServiceRef" xmlns:ref="http://www.bea.com/wli/sb/reference"/>
+                <con4:operation>update</con4:operation>
+                <con4:outboundTransform>
+                  <con2:replace varName="body" contents-only="true">
+                    <con1:id>_ActionId-1681306382093559316-1ce67197.14938a96f30.-7e26</con1:id>
+                    <con2:location>
+                      <con1:xpathText>.</con1:xpathText>
+                    </con2:location>
+                    <con2:expr>
+                      <con1:xqueryText><![CDATA[<cred:CreditResponseCollection xmlns:cred="http://xmlns.oracle.com/pcbpel/adapter/db/top/CreditResponse">
+    <cred:CreditResponse>
+        <cred:TransactionID>{$trxid}</cred:TransactionID>
+        <cred:PullTimestamp>{fn:current-dateTime()}</cred:PullTimestamp>
+    </cred:CreditResponse>
+</cred:CreditResponseCollection>]]></con1:xqueryText>
+                    </con2:expr>
+                  </con2:replace>
+                  <con2:routing-options>
+                    <con1:id>_ActionId-1681306382093559316-1ce67197.14938a96f30.-7e25</con1:id>
+                    <con2:qualityOfService>exactly-once</con2:qualityOfService>
+                  </con2:routing-options>
+                </con4:outboundTransform>
+              </con4:route>
+            </con2:default>
+          </con2:ifThenElse>
+        </con:actions>
+      </con:stage>
+    </con:pipeline>
+    <con:pipeline type="request" name="TrxIDPipeline_request">
+      <con:stage name="GetVars">
+        <con:context>
+          <con1:varNsDecl namespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/CreditResponse" prefix="cred"/>
+        </con:context>
+        <con:actions>
+          <con2:assign varName="trxid">
+            <con1:id>_ActionId-8328031186785315309--2c07bb09.1493365b156.-7e5d</con1:id>
+            <con2:expr>
+              <con1:xqueryText>$body/cred:CreditResponsePrimaryKey/cred:TransactionID/text()</con1:xqueryText>
+            </con2:expr>
+          </con2:assign>
+        </con:actions>
+      </con:stage>
+    </con:pipeline>
+    <con:pipeline type="response" name="TrxIDPipeline_response">
+      <con:stage name="UpdatePullTimestamp">
+        <con:context>
+          <con1:varNsDecl namespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/CreditResponse" prefix="cred"/>
+        </con:context>
+        <con:actions>
+          <con2:ifThenElse>
+            <con1:id>_ActionId-1681306382093559316-1ce67197.14938a96f30.-7e02</con1:id>
+            <con2:case>
+              <con2:condition>
+                <con1:xqueryText>fn:count($body/cred:CreditResponseCollection/cred:CreditResponse/cred:PullTimestamp/text())>0</con1:xqueryText>
+              </con2:condition>
+              <con2:actions/>
+            </con2:case>
+            <con2:default>
+              <con4:route>
+                <con1:id>_ActionId-1681306382093559316-1ce67197.14938a96f30.-7de0</con1:id>
+                <con4:service ref="EllieMaeNetwork_v1.0/CreditService/Business/CreditResponse_db" xsi:type="ref:BusinessServiceRef" xmlns:ref="http://www.bea.com/wli/sb/reference"/>
+                <con4:operation>update</con4:operation>
+                <con4:outboundTransform>
+                  <con2:replace varName="body" contents-only="true">
+                    <con1:id>_ActionId-1681306382093559316-1ce67197.14938a96f30.-7dbc</con1:id>
+                    <con2:location>
+                      <con1:xpathText>.</con1:xpathText>
+                    </con2:location>
+                    <con2:expr>
+                      <con1:xqueryText><![CDATA[<cred:CreditResponseCollection xmlns:cred="http://xmlns.oracle.com/pcbpel/adapter/db/top/CreditResponse">
+    <cred:CreditResponse>
+        <cred:TransactionID>{$trxid}</cred:TransactionID>
+        <cred:PullTimestamp>{fn:current-dateTime()}</cred:PullTimestamp>
+    </cred:CreditResponse>
+</cred:CreditResponseCollection>]]></con1:xqueryText>
+                    </con2:expr>
+                  </con2:replace>
+                  <con2:routing-options>
+                    <con1:id>_ActionId-1681306382093559316-1ce67197.14938a96f30.-7d82</con1:id>
+                    <con2:qualityOfService>exactly-once</con2:qualityOfService>
+                  </con2:routing-options>
+                </con4:outboundTransform>
+              </con4:route>
+            </con2:default>
+          </con2:ifThenElse>
+        </con:actions>
+      </con:stage>
+    </con:pipeline>
+    <con:flow>
+      <con:branch-node type="operation" name="BranchNode1">
+        <con:context/>
+        <con:branch-table>
+          <con:branch name="CreditResponseByMsgID">
+            <con:operator>equals</con:operator>
+            <con:value/>
+            <con:flow>
+              <con:pipeline-node name="MsgIDPipeline">
+                <con:request>MsgIDPipeline_request</con:request>
+                <con:response>MsgIDPipeline_response</con:response>
+              </con:pipeline-node>
+              <con:route-node name="RouteToCreditResponsebyMsgID">
+                <con:context>
+                  <con1:varNsDecl namespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/CreditResponse" prefix="cred"/>
+                </con:context>
+                <con:actions>
+                  <con3:route>
+                    <con1:id>_ActionId-8328031186785315309--2c07bb09.1493365b156.-7f1d</con1:id>
+                    <con3:service ref="EllieMaeNetwork_v1.0/CreditService/Business/CreditResponse_db" xsi:type="ref:BusinessServiceRef" xmlns:ref="http://www.bea.com/wli/sb/reference"/>
+                    <con3:operation>CreditResponseSelect</con3:operation>
+                    <con3:outboundTransform>
+                      <con2:replace varName="body" contents-only="true">
+                        <con1:id>_ActionId-8328031186785315309--2c07bb09.1493365b156.-7f1c</con1:id>
+                        <con2:location>
+                          <con1:xpathText>.</con1:xpathText>
+                        </con2:location>
+                        <con2:expr>
+                          <con1:xqueryText>&lt;cred:CreditResponseSelect_p1_messageidInputParameters xmlns:cred="http://xmlns.oracle.com/pcbpel/adapter/db/top/CreditResponse">
+    &lt;cred:p1_messageid>{$MsgID}&lt;/cred:p1_messageid>
+&lt;/cred:CreditResponseSelect_p1_messageidInputParameters></con1:xqueryText>
+                        </con2:expr>
+                      </con2:replace>
+                    </con3:outboundTransform>
+                    <con3:responseTransform>
+                      <con2:assign varName="trxid">
+                        <con1:id>_ActionId-1681306382093559316-1ce67197.14938a96f30.-7fb8</con1:id>
+                        <con2:expr>
+                          <con1:xqueryText>$body/cred:CreditResponseCollection/cred:CreditResponse/cred:TransactionID/text()</con1:xqueryText>
+                        </con2:expr>
+                      </con2:assign>
+                    </con3:responseTransform>
+                  </con3:route>
+                </con:actions>
+              </con:route-node>
+            </con:flow>
+          </con:branch>
+          <con:branch name="CreditResponseByTrxID">
+            <con:operator>equals</con:operator>
+            <con:value/>
+            <con:flow>
+              <con:pipeline-node name="TrxIDPipeline">
+                <con:request>TrxIDPipeline_request</con:request>
+                <con:response>TrxIDPipeline_response</con:response>
+              </con:pipeline-node>
+              <con:route-node name="RouteToCreditResponsebyTrxID">
+                <con:context/>
+                <con:actions>
+                  <con3:route>
+                    <con1:id>_ActionId-8328031186785315309--2c07bb09.1493365b156.-7e3d</con1:id>
+                    <con3:service ref="EllieMaeNetwork_v1.0/CreditService/Business/CreditResponse_db" xsi:type="ref:BusinessServiceRef" xmlns:ref="http://www.bea.com/wli/sb/reference"/>
+                    <con3:operation>selectByPrimaryKey</con3:operation>
+                    <con3:outboundTransform>
+                      <con2:replace varName="body" contents-only="true">
+                        <con1:id>_ActionId-8328031186785315309--2c07bb09.1493365b156.-7e24</con1:id>
+                        <con2:location>
+                          <con1:xpathText>.</con1:xpathText>
+                        </con2:location>
+                        <con2:expr>
+                          <con1:xqueryText>&lt;cred:CreditResponsePrimaryKey xmlns:cred="http://xmlns.oracle.com/pcbpel/adapter/db/top/CreditResponse">
+    &lt;cred:TransactionID>{$trxid}&lt;/cred:TransactionID>
+&lt;/cred:CreditResponsePrimaryKey></con1:xqueryText>
+                        </con2:expr>
+                      </con2:replace>
+                    </con3:outboundTransform>
+                    <con3:responseTransform/>
+                  </con3:route>
+                </con:actions>
+              </con:route-node>
+            </con:flow>
+          </con:branch>
+          <con:default-branch>
+            <con:flow/>
+          </con:default-branch>
+        </con:branch-table>
+      </con:branch-node>
+    </con:flow>
+  </ser:router>
+</xml-fragment>

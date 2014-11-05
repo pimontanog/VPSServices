@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:jcaEntry xmlns:con="http://www.bea.com/wli/sb/resources/config">
+    <con:jca><![CDATA[<adapter-config name="CreditResponse" adapter="Database Adapter" wsdlLocation="../wsdl/CreditResponse.wsdl" xmlns="http://platform.integration.oracle/blocks/adapter/fw/metadata">
+  
+  <connection-factory location="eis/DB/ServiceLayerDB" UIConnectionName="ServiceLayerDB" adapterRef=""/>
+  <endpoint-interaction portType="CreditResponse_ptt" operation="merge">
+    <interaction-spec className="oracle.tip.adapter.db.DBWriteInteractionSpec">
+      <property name="DescriptorName" value="CreditResponse.CreditResponse"/>
+      <property name="DmlType" value="merge"/>
+      <property name="MappingsMetaDataURL" value="CreditResponse-or-mappings.xml"/>
+      <property name="OptimizeMerge" value="true"/>
+      <property name="DetectOmissions" value="true"/>
+      <property name="GetActiveUnitOfWork" value="false"/>
+    </interaction-spec>
+  </endpoint-interaction>
+
+  <endpoint-interaction portType="CreditResponse_ptt" operation="insert">
+    <interaction-spec className="oracle.tip.adapter.db.DBWriteInteractionSpec">
+      <property name="DescriptorName" value="CreditResponse.CreditResponse"/>
+      <property name="DmlType" value="insert"/>
+      <property name="MappingsMetaDataURL" value="CreditResponse-or-mappings.xml"/>
+      <property name="OptimizeMerge" value="true"/>
+      <property name="DetectOmissions" value="true"/>
+      <property name="GetActiveUnitOfWork" value="false"/>
+    </interaction-spec>
+  </endpoint-interaction>
+
+  <endpoint-interaction portType="CreditResponse_ptt" operation="update">
+    <interaction-spec className="oracle.tip.adapter.db.DBWriteInteractionSpec">
+      <property name="DescriptorName" value="CreditResponse.CreditResponse"/>
+      <property name="DmlType" value="update"/>
+      <property name="MappingsMetaDataURL" value="CreditResponse-or-mappings.xml"/>
+      <property name="OptimizeMerge" value="true"/>
+      <property name="DetectOmissions" value="true"/>
+      <property name="GetActiveUnitOfWork" value="false"/>
+    </interaction-spec>
+  </endpoint-interaction>
+
+  <endpoint-interaction portType="CreditResponse_ptt" operation="delete">
+    <interaction-spec className="oracle.tip.adapter.db.DBWriteInteractionSpec">
+      <property name="DescriptorName" value="CreditResponse.CreditResponse"/>
+      <property name="DmlType" value="delete"/>
+      <property name="DetectOmissions" value="true"/>
+      <property name="OptimizeMerge" value="true"/>
+      <property name="MappingsMetaDataURL" value="CreditResponse-or-mappings.xml"/>
+      <property name="GetActiveUnitOfWork" value="false"/>
+    </interaction-spec>
+  </endpoint-interaction>
+
+  <endpoint-interaction portType="CreditResponse_ptt" operation="CreditResponseSelect">
+    <interaction-spec className="oracle.tip.adapter.db.DBReadInteractionSpec">
+      <property name="DescriptorName" value="CreditResponse.CreditResponse"/>
+      <property name="QueryName" value="CreditResponseSelect"/>
+      <property name="MappingsMetaDataURL" value="CreditResponse-or-mappings.xml"/>
+      <property name="ReturnSingleResultSet" value="false"/>
+      <property name="GetActiveUnitOfWork" value="false"/>
+    </interaction-spec>
+  </endpoint-interaction>
+
+  <endpoint-interaction portType="CreditResponse_ptt" operation="selectByPrimaryKey">
+    <interaction-spec className="oracle.tip.adapter.db.DBReadInteractionSpec">
+      <property name="DescriptorName" value="CreditResponse.CreditResponse"/>
+      <property name="QueryName" value="readObject"/>
+      <property name="MappingsMetaDataURL" value="CreditResponse-or-mappings.xml"/>
+      <property name="GetActiveUnitOfWork" value="false"/>
+    </interaction-spec>
+  </endpoint-interaction>
+
+</adapter-config>]]></con:jca>
+    <con:jcaDependency>
+        <con:wsdlRef wsdlLocation="../wsdl/CreditResponse.wsdl" ref="EllieMaeNetwork_v1.0/CreditService/Resource/wsdl/CreditResponse"/>
+        <con:toplinkRef toplinkFile="CreditResponse-or-mappings.xml" ref="EllieMaeNetwork_v1.0/CreditService/Resource/adapters/CreditResponse-or-mappings"/>
+    </con:jcaDependency>
+</con:jcaEntry>

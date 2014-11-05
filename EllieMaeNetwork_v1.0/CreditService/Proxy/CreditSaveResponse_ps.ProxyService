@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xml-fragment xmlns:ser="http://www.bea.com/wli/sb/services" xmlns:tran="http://www.bea.com/wli/sb/transports" xmlns:env="http://www.bea.com/wli/config/env" xmlns:http="http://www.bea.com/wli/sb/transports/http" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://www.bea.com/wli/sb/pipeline/config" xmlns:con1="http://www.bea.com/wli/sb/stages/routing/config" xmlns:con2="http://www.bea.com/wli/sb/stages/config" xmlns:con3="http://www.bea.com/wli/sb/stages/transform/config">
+  <ser:coreEntry isProxy="true" isEnabled="true" isTracingEnabled="false">
+    <ser:binding type="SOAP" isSoap12="false" xsi:type="con:SoapBindingType" xmlns:con="http://www.bea.com/wli/sb/services/bindings/config">
+      <con:wsdl ref="EllieMaeNetwork_v1.0/CreditService/Resource/wsdl/CreditExternal"/>
+      <con:binding>
+        <con:name>CreditCallbackBinding</con:name>
+        <con:namespace>http://www.elliemae.com/service/credit</con:namespace>
+      </con:binding>
+      <con:selector type="SOAP body"/>
+    </ser:binding>
+    <ser:monitoring isEnabled="false">
+      <ser:aggregationInterval>10</ser:aggregationInterval>
+      <ser:pipelineMonitoringLevel>Pipeline</ser:pipelineMonitoringLevel>
+    </ser:monitoring>
+    <ser:reporting>true</ser:reporting>
+    <ser:logging isEnabled="true">
+      <ser:logLevel>debug</ser:logLevel>
+    </ser:logging>
+    <ser:sla-alerting isEnabled="true">
+      <ser:alertLevel>normal</ser:alertLevel>
+    </ser:sla-alerting>
+    <ser:pipeline-alerting isEnabled="true">
+      <ser:alertLevel>normal</ser:alertLevel>
+    </ser:pipeline-alerting>
+    <ser:ws-policy>
+      <ser:binding-mode>wsdl-policy-attachments</ser:binding-mode>
+    </ser:ws-policy>
+  </ser:coreEntry>
+  <ser:endpointConfig>
+    <tran:provider-id>http</tran:provider-id>
+    <tran:inbound>true</tran:inbound>
+    <tran:URI>
+      <env:value>/EllieMaeNetwork_v1.0/CreditService/Proxy/CreditSaveResponse_ps</env:value>
+    </tran:URI>
+    <tran:inbound-properties/>
+    <tran:all-headers>false</tran:all-headers>
+    <tran:provider-specific>
+      <http:inbound-properties/>
+    </tran:provider-specific>
+  </ser:endpointConfig>
+  <ser:router>
+    <con:pipeline type="request" name="PipelinePairNode1_request">
+      <con:stage name="GetMessageVars">
+        <con:context>
+          <con2:varNsDecl namespace="http://www.elliemae.com/service/credit" prefix="cred"/>
+        </con:context>
+        <con:actions>
+          <con3:assign varName="MessageID">
+            <con2:id>_ActionId-8821487364782454368--6eb6e510.1491ffe749f.-7da4</con2:id>
+            <con3:expr>
+              <con2:xqueryText>$header/wsa05:RelatesTo/text()</con2:xqueryText>
+            </con3:expr>
+          </con3:assign>
+          <con3:assign varName="AuditTransactionID">
+            <con2:id>_ActionId-8821487364782454368--6eb6e510.1491ffe749f.-7d76</con2:id>
+            <con3:expr>
+              <con2:xqueryText>data($body/cred:RESPONSE_GROUP/@TransactionID)</con2:xqueryText>
+            </con3:expr>
+          </con3:assign>
+          <con3:assign varName="MainResponse">
+            <con2:id>_ActionId-7037263155169813172--79f5d60d.1492e7c69da.-7fdd</con2:id>
+            <con3:expr>
+              <con2:xqueryText>$body/cred:RESPONSE_GROUP</con2:xqueryText>
+            </con3:expr>
+          </con3:assign>
+        </con:actions>
+      </con:stage>
+    </con:pipeline>
+    <con:pipeline type="response" name="PipelinePairNode1_response"/>
+    <con:flow>
+      <con:pipeline-node name="PipelinePairNode1">
+        <con:request>PipelinePairNode1_request</con:request>
+        <con:response>PipelinePairNode1_response</con:response>
+      </con:pipeline-node>
+      <con:route-node name="RouteToResponseRepository">
+        <con:context>
+          <con2:varNsDecl namespace="http://www.elliemae.com/service/credit" prefix="cred"/>
+        </con:context>
+        <con:actions>
+          <con1:route>
+            <con2:id>_ActionId-5339562749844666945--4f070346.1491f92eb2a.-7fca</con2:id>
+            <con1:service ref="EllieMaeNetwork_v1.0/CreditService/Business/CreditResponse_db" xsi:type="ref:BusinessServiceRef" xmlns:ref="http://www.bea.com/wli/sb/reference"/>
+            <con1:operation>merge</con1:operation>
+            <con1:outboundTransform>
+              <con3:replace varName="body" contents-only="true">
+                <con2:id>_ActionId-8821487364782454368--6eb6e510.1491ffe749f.-7dd2</con2:id>
+                <con3:location>
+                  <con2:xpathText>.</con2:xpathText>
+                </con3:location>
+                <con3:expr>
+                  <con2:xqueryText><![CDATA[<cred:CreditResponseCollection xmlns:cred="http://xmlns.oracle.com/pcbpel/adapter/db/top/CreditResponse">
+    <cred:CreditResponse>
+        <cred:TransactionID>{$AuditTransactionID}</cred:TransactionID>
+        <cred:PushTimestamp>{fn:current-dateTime()}</cred:PushTimestamp>
+        <cred:RawMessage>{$MainResponse}</cred:RawMessage>
+        <cred:MessageID>{$MessageID}</cred:MessageID>
+    </cred:CreditResponse>
+</cred:CreditResponseCollection>]]></con2:xqueryText>
+                </con3:expr>
+              </con3:replace>
+            </con1:outboundTransform>
+            <con1:responseTransform/>
+          </con1:route>
+        </con:actions>
+      </con:route-node>
+    </con:flow>
+  </ser:router>
+</xml-fragment>

@@ -1,0 +1,1490 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:schemaEntry xmlns:con="http://www.bea.com/wli/sb/resources/config">
+    <con:schema><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns:ellie="http://www.elliemae.com/service/credit"
+            targetNamespace="http://www.elliemae.com/service/credit"
+            elementFormDefault="qualified">
+  <xsd:element name="RESPONSE_GROUP">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="RESPONDING_PARTY">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="CONTACT_DETAIL" maxOccurs="unbounded">
+                <xsd:complexType>
+                  <xsd:sequence>
+                    <xsd:element name="CONTACT_POINT" maxOccurs="unbounded">
+                      <xsd:complexType>
+                        <xsd:attribute name="_Type" type="ellie:CREDITREPORTING_ContactPointTypeEnumerated"/>
+                        <xsd:attribute name="_Value" type="xsd:string"/>
+                        <xsd:attribute name="_PreferenceIndicator" type="xsd:string"/>
+                      </xsd:complexType>
+                    </xsd:element>
+                  </xsd:sequence>
+                  <xsd:attribute name="_Name" type="xsd:string"/>
+                </xsd:complexType>
+              </xsd:element>
+            </xsd:sequence>
+            <xsd:attribute name="_Name" type="xsd:string"/>
+            <xsd:attribute name="_StreetAddress" type="xsd:string"/>
+            <xsd:attribute name="_StreetAddress2" type="xsd:string"/>
+            <xsd:attribute name="_City" type="xsd:string"/>
+            <xsd:attribute name="_State" type="xsd:string"/>
+            <xsd:attribute name="_PostalCode" type="xsd:integer"/>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="RESPOND_TO_PARTY">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="CONTACT_DETAIL">
+                <xsd:complexType>
+                  <xsd:sequence>
+                    <xsd:element name="CONTACT_POINT" maxOccurs="unbounded">
+                      <xsd:complexType>
+                        <xsd:attribute name="_Type" type="ellie:CREDITREPORTING_ContactPointTypeEnumerated"/>
+                        <xsd:attribute name="_Value" type="xsd:string"/>
+                        <xsd:attribute name="_PreferenceIndicator" type="xsd:string"/>
+                      </xsd:complexType>
+                    </xsd:element>
+                  </xsd:sequence>
+                  <xsd:attribute name="_Name" type="xsd:string"/>
+                </xsd:complexType>
+              </xsd:element>
+            </xsd:sequence>
+            <xsd:attribute name="_Name" type="xsd:string"/>
+            <xsd:attribute name="_StreetAddress" type="xsd:string"/>
+            <xsd:attribute name="_StreetAddress2" type="xsd:string"/>
+            <xsd:attribute name="_City" type="xsd:string"/>
+            <xsd:attribute name="_State" type="xsd:string"/>
+            <xsd:attribute name="_PostalCode" type="xsd:integer"/>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="RESPONSE">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="KEY" minOccurs="0" maxOccurs="unbounded">
+                <xsd:complexType>
+                  <xsd:attribute name="_Name" type="xsd:string"/>
+                  <xsd:attribute name="_Value" type="xsd:string"/>
+                </xsd:complexType>
+              </xsd:element>
+              <xsd:element name="RESPONSE_DATA" minOccurs="0" maxOccurs="unbounded">
+                <xsd:complexType>
+                  <xsd:sequence>
+                    <xsd:element name="CREDIT_RESPONSE">
+                      <xsd:complexType>
+                        <xsd:sequence>
+                          <xsd:element name="_DATA_INFORMATION">
+                            <xsd:complexType>
+                              <xsd:sequence>
+                                <xsd:element name="DATA_VERSION" 
+                                             maxOccurs="unbounded">
+                                  <xsd:complexType>
+                                    <xsd:attribute name="_Name"
+                                                   type="xsd:string"/>
+                                    <xsd:attribute name="_Number"
+                                                   type="xsd:integer"/>
+                                  </xsd:complexType>
+                                </xsd:element>
+                              </xsd:sequence>
+                            </xsd:complexType>
+                          </xsd:element>
+                          <xsd:element name="CREDIT_BUREAU">
+                            <xsd:complexType>
+                              <xsd:sequence>
+                                <xsd:element name="CONTACT_DETAIL"
+                                             maxOccurs="unbounded">
+                                  <xsd:complexType>
+                                    <xsd:sequence>
+                                      <xsd:element name="CONTACT_POINT"
+                                                   maxOccurs="unbounded">
+                                        <xsd:complexType>
+                                          <xsd:attribute name="_Type"
+                                                         type="ellie:CREDITREPORTING_ContactPointTypeEnumerated"/>
+                                          <xsd:attribute name="_RoleType"
+                                                         type="xsd:string"/>
+                                          <xsd:attribute name="_PreferenceIndicator"
+                                                         type="xsd:string"/>
+                                          <xsd:attribute name="_Value"
+                                                         type="xsd:string"/>
+                                        </xsd:complexType>
+                                      </xsd:element>
+                                    </xsd:sequence>
+                                    <xsd:attribute name="_Name"
+                                                   type="xsd:string"/>
+                                  </xsd:complexType>
+                                </xsd:element>
+                              </xsd:sequence>
+                              <xsd:attribute name="_Name" type="xsd:string"/>
+                              <xsd:attribute name="_StreetAddress"
+                                             type="xsd:string"/>
+                              <xsd:attribute name="_StreetAddress2"
+                                             type="xsd:string"/>
+                              <xsd:attribute name="_City" type="xsd:string"/>
+                              <xsd:attribute name="_State" type="xsd:string"/>
+                              <xsd:attribute name="_PostalCode"
+                                             type="xsd:integer"/>
+                              <xsd:attribute name="_DisclaimerText"
+                                             type="xsd:string"/>
+                            </xsd:complexType>
+                          </xsd:element>
+                          <xsd:element name="CREDIT_REPORT_PRICE">
+                            <xsd:complexType>
+                              <xsd:attribute name="_Amount" type="xsd:float"/>
+                              <xsd:attribute name="_Type" type="ellie:CREDITREPORTING_CreditReportPriceTypeEnumerated"/>
+                              <xsd:attribute name="_TypeOtherDescription" type="xsd:string"/>
+                            </xsd:complexType>
+                          </xsd:element>
+                          <xsd:element name="CREDIT_REPOSITORY_INCLUDED">
+                            <xsd:complexType>
+                              <xsd:attribute name="_EquifaxIndicator"
+                                             type="xsd:string"/>
+                              <xsd:attribute name="_ExperianIndicator"
+                                             type="xsd:string"/>
+                              <xsd:attribute name="_TransUnionIndicator"
+                                             type="xsd:string"/>
+                            </xsd:complexType>
+                          </xsd:element>
+                          <xsd:element name="REQUESTING_PARTY">
+                            <xsd:complexType>
+                              <xsd:sequence>
+                                <xsd:element name="CONTACT_DETAIL">
+                                  <xsd:complexType>
+                                    <xsd:attribute name="_Name" type="xsd:string"/>
+                                  </xsd:complexType>
+                                </xsd:element>
+                              </xsd:sequence>
+                              <xsd:attribute name="LenderCaseIdentifier"
+                                             type="xsd:string"/>
+                              <xsd:attribute name="InternalAccountIdentifier"
+                                             type="xsd:string"/>
+                              <xsd:attribute name="_Name" type="xsd:string"/>
+                              <xsd:attribute name="_StreetAddress"
+                                             type="xsd:string"/>
+                              <xsd:attribute name="_City" type="xsd:string"/>
+                              <xsd:attribute name="_State" type="xsd:string"/>
+                              <xsd:attribute name="_PostalCode"
+                                             type="xsd:integer"/>
+                              <xsd:attribute name="_RequestedByName"
+                                             type="xsd:string"/>
+                            </xsd:complexType>
+                          </xsd:element>
+                          <xsd:element name="CREDIT_REQUEST_DATA">
+                            <xsd:complexType>
+                              <xsd:sequence>
+                                <xsd:element name="CREDIT_REPOSITORY_INCLUDED">
+                                  <xsd:complexType>
+                                    <xsd:attribute name="_EquifaxIndicator"
+                                                   type="xsd:string"/>
+                                    <xsd:attribute name="_ExperianIndicator"
+                                                   type="xsd:string"/>
+                                    <xsd:attribute name="_TransUnionIndicator"
+                                                   type="xsd:string"/>
+                                  </xsd:complexType>
+                                </xsd:element>
+                              </xsd:sequence>
+                              <xsd:attribute name="BorrowerID"
+                                             type="xsd:string"/>
+                              <xsd:attribute name="CreditRequestID"
+                                             type="xsd:string"/>
+                              <xsd:attribute name="CreditReportIdentifier"
+                                             type="xsd:string"/>
+                              <xsd:attribute name="CreditReportType"
+                                             type="xsd:string"/>
+                              <xsd:attribute name="CreditReportRequestActionType"
+                                             type="xsd:string"/>
+                              <xsd:attribute name="CreditRepositoriesSelectedCount"
+                                             type="xsd:integer"/>
+                              <xsd:attribute name="CreditRequestDateTime"
+                                             type="xsd:string"/>
+                              <xsd:attribute name="CreditRequestType"
+                                             type="xsd:string"/>
+                            </xsd:complexType>
+                          </xsd:element>
+                          <xsd:element name="BORROWER" maxOccurs="unbounded">
+                            <xsd:complexType>
+                              <xsd:sequence>
+                                <xsd:element name="_RESIDENCE">
+                                  <xsd:complexType>
+                                    <xsd:sequence>
+                                      <xsd:element name="PARSED_STREET_ADDRESS">
+                                        <xsd:complexType>
+                                          <xsd:attribute name="_DirectionPrefix"
+                                                         type="xsd:string"/>
+                                          <xsd:attribute name="_HouseNumber"
+                                                         type="xsd:integer"/>
+                                          <xsd:attribute name="_StreetName"
+                                                         type="xsd:string"/>
+                                          <xsd:attribute name="_StreetSuffix"
+                                                         type="xsd:string"/>
+                                        </xsd:complexType>
+                                      </xsd:element>
+                                    </xsd:sequence>
+                                    <xsd:attribute name="_StreetAddress"
+                                                   type="xsd:string"/>
+                                    <xsd:attribute name="_City"
+                                                   type="xsd:string"/>
+                                    <xsd:attribute name="_State"
+                                                   type="xsd:string"/>
+                                    <xsd:attribute name="_PostalCode"
+                                                   type="xsd:integer"/>
+                                    <xsd:attribute name="BorrowerResidencyType" type="ellie:CREDITREPORTING_BorrowerResidencyTypeEnumerated"/>
+                                  </xsd:complexType>
+                                </xsd:element>
+                                <xsd:element name="EMPLOYER"
+                                             maxOccurs="unbounded">
+                                  <xsd:complexType>
+                                    <xsd:sequence>
+                                      <xsd:element name="VERIFICATION">
+                                        <xsd:complexType>
+                                          <xsd:attribute name="_StatusType" type="ellie:CREDITREPORTING_VerificationStatusTypeEnumerated"/>
+                                        </xsd:complexType>
+                                      </xsd:element>
+                                    </xsd:sequence>
+                                    <xsd:attribute name="_Name"
+                                                   type="xsd:string"/>
+                                    <xsd:attribute name="EmploymentCurrentIndicator"
+                                                   type="xsd:string"/>
+                                    <xsd:attribute name="_TelephoneNumber"
+                                                   type="xsd:string"/>
+                                    <xsd:attribute name="EmploymentPositionDescription"
+                                                   type="xsd:string"/>
+                                    <xsd:attribute name="PreviousEmploymentEndDate"
+                                                   type="xsd:string"/>
+                                    <xsd:attribute name="PreviousEmploymentStartDate"
+                                                   type="xsd:string"/>
+                                  </xsd:complexType>
+                                </xsd:element>
+                              </xsd:sequence>
+                              <xsd:attribute name="BorrowerID"
+                                             type="xsd:string"/>
+                              <xsd:attribute name="_FirstName"
+                                             type="xsd:string"/>
+                              <xsd:attribute name="_LastName"
+                                             type="xsd:string"/>
+                              <xsd:attribute name="_MiddleName"
+                                             type="xsd:string"/>
+                              <xsd:attribute name="_PrintPositionType" type="ellie:CREDITREPORTING_BorrowerPrintPositionTypeEnumerated"/>
+                              <xsd:attribute name="_SSN" type="xsd:integer"/>
+                              <xsd:attribute name="_UnparsedName"
+                                             type="xsd:string"/>
+                              <xsd:attribute name="MaritalStatusType" type="ellie:CREDITREPORTING_MaritalStatusTypeEnumerated"/>
+                            </xsd:complexType>
+                          </xsd:element>
+                          <xsd:element name="CREDIT_LIABILITY"
+                                       maxOccurs="unbounded">
+                            <xsd:complexType>
+                              <xsd:sequence>
+                                <xsd:element name="_CREDITOR">
+                                  <xsd:complexType>
+                                    <xsd:sequence>
+                                      <xsd:element name="CONTACT_DETAIL"
+                                                   minOccurs="0">
+                                        <xsd:complexType>
+                                          <xsd:sequence>
+                                            <xsd:element name="CONTACT_POINT">
+                                              <xsd:complexType>
+                                                <xsd:attribute name="_Type"
+                                                               type="xsd:string"/>
+                                                <xsd:attribute name="_Value"
+                                                               type="xsd:string"/>
+                                              </xsd:complexType>
+                                            </xsd:element>
+                                          </xsd:sequence>
+                                          <xsd:attribute name="_Name"
+                                                         type="xsd:string"/>
+                                        </xsd:complexType>
+                                      </xsd:element>
+                                    </xsd:sequence>
+                                    <xsd:attribute name="_Name"
+                                                   type="xsd:string"/>
+                                    <xsd:attribute name="_StreetAddress"
+                                                   type="xsd:string"/>
+                                    <xsd:attribute name="_City"
+                                                   type="xsd:string"/>
+                                    <xsd:attribute name="_State"
+                                                   type="xsd:string"/>
+                                    <xsd:attribute name="_PostalCode"
+                                                   type="xsd:integer"/>
+                                  </xsd:complexType>
+                                </xsd:element>
+                                <xsd:element name="_CURRENT_RATING"
+                                             minOccurs="0">
+                                  <xsd:complexType>
+                                    <xsd:attribute name="_Code"
+                                                   type="xsd:string"/>
+                                    <xsd:attribute name="_Type"
+                                                   type="xsd:string"/>
+                                  </xsd:complexType>
+                                </xsd:element>
+                                <xsd:element name="_LATE_COUNT">
+                                  <xsd:complexType>
+                                    <xsd:attribute name="_30Days"
+                                                   type="xsd:integer"/>
+                                    <xsd:attribute name="_60Days"
+                                                   type="xsd:integer"/>
+                                    <xsd:attribute name="_90Days"
+                                                   type="xsd:integer"/>
+                                    <xsd:attribute name="_120Days"
+                                                   type="xsd:integer"/>
+                                  </xsd:complexType>
+                                </xsd:element>
+                                <xsd:element name="_PAYMENT_PATTERN"
+                                             minOccurs="0">
+                                  <xsd:complexType>
+                                    <xsd:attribute name="_Data"
+                                                   type="xsd:string"/>
+                                    <xsd:attribute name="_StartDate"
+                                                   type="xsd:string"/>
+                                  </xsd:complexType>
+                                </xsd:element>              
+                                <xsd:element name="CREDIT_REPOSITORY"
+                                             maxOccurs="unbounded">
+                                  <xsd:complexType>
+                                    <xsd:attribute name="_SourceType"
+                                                   type="xsd:string"/>
+                                    <xsd:attribute name="_SubscriberCode"
+                                                   type="xsd:string"/>
+                                  </xsd:complexType>
+                                </xsd:element>
+                                <xsd:element name="CREDIT_COMMENT"
+                                             maxOccurs="unbounded"
+                                             minOccurs="0">
+                                  <xsd:complexType>
+                                    <xsd:sequence>
+                                      <xsd:element name="_Text"
+                                                   type="xsd:string"/>
+                                    </xsd:sequence>
+                                    <xsd:attribute name="_Code"
+                                                   type="xsd:string"/>
+                                    <xsd:attribute name="_ReportedDate"
+                                                   type="xsd:string"/>
+                                    <xsd:attribute name="_SourceType"
+                                                   type="xsd:string"/>
+                                    <xsd:attribute name="_Type"
+                                                   type="xsd:string"/>
+                                  </xsd:complexType>
+                                </xsd:element>
+                                <xsd:element name="_HIGHEST_ADVERSE_RATING"
+                                             minOccurs="0">
+                                  <xsd:complexType>
+                                    <xsd:attribute name="_Code"
+                                                   type="xsd:integer"/>
+                                    <xsd:attribute name="_Date"
+                                                   type="xsd:string"/>
+                                    <xsd:attribute name="_Type"
+                                                   type="xsd:string"/>
+                                  </xsd:complexType>
+                                </xsd:element>
+                                <xsd:element name="_MOST_RECENT_ADVERSE_RATING"
+                                             minOccurs="0">
+                                  <xsd:complexType>
+                                    <xsd:attribute name="_Code"
+                                                   type="xsd:integer"/>
+                                    <xsd:attribute name="_Date"
+                                                   type="xsd:string"/>
+                                    <xsd:attribute name="_Type"
+                                                   type="xsd:string"/>
+                                  </xsd:complexType>
+                                </xsd:element>
+                                <xsd:element name="_PRIOR_ADVERSE_RATING"
+                                             maxOccurs="unbounded"
+                                             minOccurs="0">
+                                  <xsd:complexType>
+                                    <xsd:attribute name="_Code"
+                                                   type="xsd:integer"/>
+                                    <xsd:attribute name="_Date"
+                                                   type="xsd:string"/>
+                                    <xsd:attribute name="_Type"
+                                                   type="xsd:string"/>
+                                  </xsd:complexType>
+                                </xsd:element>
+                              </xsd:sequence>
+                              <xsd:attribute name="CreditLiabilityID"
+                                             type="xsd:string"/>
+                              <xsd:attribute name="BorrowerID"
+                                             type="xsd:string"/>
+                              <xsd:attribute name="CreditFileID"
+                                             type="xsd:string"/>
+                              <xsd:attribute name="CreditTradeReferenceID"
+                                             type="xsd:string"/>
+                              <xsd:attribute name="_AccountIdentifier"
+                                             type="xsd:string"/>
+                              <xsd:attribute name="_AccountOpenedDate"
+                                             type="xsd:string"/>
+                              <xsd:attribute name="_AccountOwnershipType" type="ellie:CREDITREPORTING_CreditLiabilityAccountOwnershipTypeEnumerated"/>
+                              <xsd:attribute name="_AccountReportedDate"
+                                             type="xsd:string"/>
+                              <xsd:attribute name="_AccountBalanceDate"
+                                             type="xsd:string"/>
+                              <xsd:attribute name="_AccountStatusDate"
+                                             type="xsd:string"/>
+                              <xsd:attribute name="_AccountStatusType" type="ellie:CREDITREPORTING_CreditLiabilityAccountStatusTypeEnumerated"/>
+                              <xsd:attribute name="_AccountType" type="ellie:CREDITREPORTING_CreditLiabilityAccountTypeEnumerated"/>
+                              <xsd:attribute name="_CollateralDescription"
+                                             type="xsd:string"/>
+                              <xsd:attribute name="_ConsumerDisputeIndicator"
+                                             type="xsd:string"/>
+                              <xsd:attribute name="_DerogatoryDataIndicator"
+                                             type="xsd:string"/>
+                              <xsd:attribute name="_LastActivityDate"
+                                             type="xsd:string"/>
+                              <xsd:attribute name="_ManualUpdateIndicator"
+                                             type="xsd:string"/>
+                              <xsd:attribute name="_MonthlyPaymentAmount"
+                                             type="xsd:integer"/>
+                              <xsd:attribute name="_MonthsReviewedCount"
+                                             type="xsd:integer"/>
+                              <xsd:attribute name="_PastDueAmount"
+                                             type="xsd:integer"/>
+                              <xsd:attribute name="_TermsSourceType" type="ellie:CREDITREPORTING_CreditLiabilityTermsSourceTypeEnumerated"/>
+                              <xsd:attribute name="_UnpaidBalanceAmount"
+                                             type="xsd:integer"/>
+                              <xsd:attribute name="CreditBusinessType" type="ellie:CREDITREPORTING_CreditBusinessTypeEnumerated"/>
+                              <xsd:attribute name="CreditLoanType" type="ellie:CREDITREPORTING_CreditLoanTypeEnumerated"/>
+                              <xsd:attribute name="_HighCreditAmount"
+                                             type="xsd:integer"/>
+                              <xsd:attribute name="_AccountClosedDate"
+                                             type="xsd:string"/>
+                              <xsd:attribute name="_CreditLimitAmount"
+                                             type="xsd:integer"/>
+                              <xsd:attribute name="_MonthsRemainingCount"
+                                             type="xsd:integer"/>
+                              <xsd:attribute name="_TermsDescription"
+                                             type="xsd:string"/>
+                              <xsd:attribute name="_TermsMonthsCount"
+                                             type="xsd:integer"/>
+                              <xsd:attribute name="_OriginalCreditorName"
+                                             type="xsd:string"/>
+                              <xsd:attribute name="CreditCounselingIndicator"
+                                             type="xsd:string"/>
+                              <xsd:attribute name="_HighBalanceAmount"
+                                             type="xsd:integer"/>
+                              <xsd:attribute name="_AccountPaidDate"
+                                             type="xsd:string"/>
+                              <xsd:attribute name="_ChargeOffAmount"
+                                             type="xsd:integer"/>
+                              <xsd:attribute name="_ChargeOffDate"
+                                             type="xsd:string"/>
+                              <xsd:attribute name="CreditLoanTypeOtherDescription"
+                                             type="xsd:string"/>
+                            </xsd:complexType>
+                          </xsd:element>
+                          <xsd:element name="CREDIT_PUBLIC_RECORD"
+                                       maxOccurs="unbounded">
+                            <xsd:complexType>
+                              <xsd:sequence>
+                                <xsd:element name="CREDIT_REPOSITORY"
+                                             maxOccurs="unbounded">
+                                  <xsd:complexType>
+                                    <xsd:attribute name="_SourceType" type="ellie:CREDITREPORTING_CreditRepositorySourceTypeEnumerated"/>
+                                    <xsd:attribute name="_SubscriberCode"
+                                                   type="xsd:string"/>
+                                  </xsd:complexType>
+                                </xsd:element>
+                              </xsd:sequence>
+                              <xsd:attribute name="CreditPublicRecordID"
+                                             type="xsd:string"/>
+                              <xsd:attribute name="BorrowerID"
+                                             type="xsd:string"/>
+                              <xsd:attribute name="CreditFileID"
+                                             type="xsd:string"/>
+                              <xsd:attribute name="_AccountOwnershipType" type="ellie:CREDITREPORTING_CreditPublicRecordAccountOwnershipTypeEnumerated"/>
+                              <xsd:attribute name="_ConsumerDisputeIndicator"
+                                             type="xsd:string"/>
+                              <xsd:attribute name="_CourtName"
+                                             type="xsd:string"/>
+                              <xsd:attribute name="_DefendantName"
+                                             type="xsd:string"/>
+                              <xsd:attribute name="_DerogatoryDataIndicator"
+                                             type="xsd:string"/>
+                              <xsd:attribute name="_DispositionDate"
+                                             type="xsd:string"/>
+                              <xsd:attribute name="_DispositionType"
+                                             type="xsd:string"/>
+                              <xsd:attribute name="_DocketIdentifier"
+                                             type="xsd:string"/>
+                              <xsd:attribute name="_FiledDate"
+                                             type="xsd:string"/>
+                              <xsd:attribute name="_LegalObligationAmount"
+                                             type="xsd:float"/>
+                              <xsd:attribute name="_ManualUpdateIndicator"
+                                             type="xsd:string"/>
+                              <xsd:attribute name="_PaidDate"
+                                             type="xsd:string"/>
+                              <xsd:attribute name="_PlaintiffName"
+                                             type="xsd:string"/>
+                              <xsd:attribute name="_ReportedDate"
+                                             type="xsd:string"/>
+                              <xsd:attribute name="_Type" type="ellie:CREDITREPORTING_CreditPublicRecordTypeEnumerated"/>
+                              <xsd:attribute name="CreditTradeReferenceID"
+                                             type="xsd:string"/>
+                            </xsd:complexType>
+                          </xsd:element>
+                          <xsd:element name="CREDIT_INQUIRY"
+                                       maxOccurs="unbounded">
+                            <xsd:complexType>
+                              <xsd:sequence>
+                                <xsd:element name="CREDIT_REPOSITORY">
+                                  <xsd:complexType>
+                                    <xsd:attribute name="_SourceType" type="ellie:CREDITREPORTING_CreditRepositorySourceTypeEnumerated"/>
+                                    <xsd:attribute name="_SubscriberCode" type="xsd:string"/>
+                                  </xsd:complexType>
+                                </xsd:element>
+                              </xsd:sequence>
+                              <xsd:attribute name="CreditInquiryID"
+                                             type="xsd:string"/>
+                              <xsd:attribute name="BorrowerID"
+                                             type="xsd:string"/>
+                              <xsd:attribute name="CreditFileID"
+                                             type="xsd:string"/>
+                              <xsd:attribute name="_Name" type="xsd:string"/>
+                              <xsd:attribute name="_Date" type="xsd:string"/>
+                              <xsd:attribute name="CreditBusinessType" type="ellie:CREDITREPORTING_CreditBusinessTypeEnumerated"/>
+                              <xsd:attribute name="CreditLoanType" type="ellie:CREDITREPORTING_CreditLoanTypeEnumerated"/>
+                              <xsd:attribute name="CreditTradeReferenceID"
+                                             type="xsd:string"/>
+                              <xsd:attribute name="_StreetAddress"
+                                             type="xsd:string"/>               
+                              <xsd:attribute name="_City" type="xsd:string"/>
+                              <xsd:attribute name="_State" type="xsd:string"/>
+                              <xsd:attribute name="_PostalCode"
+                                             type="xsd:integer"/>
+                            </xsd:complexType>
+                          </xsd:element>
+                          <xsd:element name="CREDIT_FILE" maxOccurs="unbounded">
+                            <xsd:complexType>
+                              <xsd:sequence>
+                                <xsd:element name="_ALERT_MESSAGE"
+                                             minOccurs="0" maxOccurs="unbounded">
+                                  <xsd:complexType>
+                                    <xsd:sequence>
+                                      <xsd:element name="_Text" minOccurs="0"
+                                                   type="xsd:string"/>
+                                    </xsd:sequence>
+                                    <xsd:attribute name="_Code"
+                                                   type="xsd:string"/>
+                                    <xsd:attribute name="_CategoryType" type="ellie:CREDITREPORTING_CreditFileAlertMessageCategoryTypeEnumerated"/>
+                                    <xsd:attribute name="_Type" type="ellie:CREDITREPORTING_CreditFileAlertMessageTypeEnumerated"/>
+                                    <xsd:attribute name="_AdverseIndicator"
+                                                   type="xsd:string"/>
+                                    <xsd:attribute name="_CategoryTypeOtherDescription"
+                                                   type="xsd:string"/>
+                                  </xsd:complexType>
+                                </xsd:element>
+                                <xsd:element name="_BORROWER">
+                                  <xsd:complexType>
+                                    <xsd:sequence>
+                                      <xsd:element name="_UnparsedAddress"
+                                                   type="xsd:string"/>
+                                      <xsd:element name="_UnparsedEmployment"
+                                                   maxOccurs="unbounded"
+                                                   minOccurs="0"
+                                                   type="xsd:string"/>                                    
+                                      <xsd:element name="_RESIDENCE"
+                                                   maxOccurs="unbounded">
+                                        <xsd:complexType>
+                                          <xsd:sequence>
+                                            <xsd:element name="PARSED_STREET_ADDRESS">
+                                              <xsd:complexType>
+                                                <xsd:attribute name="_HouseNumber"
+                                                               type="xsd:string"/>
+                                                <xsd:attribute name="_StreetName"
+                                                               type="xsd:string"/>
+                                                <xsd:attribute name="_StreetSuffix"
+                                                               type="xsd:string"/>
+                                                <xsd:attribute name="_ApartmentOrUnit"
+                                                               type="xsd:string"/>
+                                                <xsd:attribute name="_DirectionPrefix"
+                                                               type="xsd:integer"/>
+                                              </xsd:complexType>
+                                            </xsd:element>
+                                            <xsd:element name="CONTACT_DETAIL"
+                                                         minOccurs="0">
+                                              <xsd:complexType>
+                                                <xsd:sequence>
+                                                  <xsd:element name="CONTACT_POINT">
+                                                    <xsd:complexType>
+                                                      <xsd:attribute name="_Type"
+                                                                     type="xsd:string"/>
+                                                      <xsd:attribute name="_RoleType"
+                                                                     type="xsd:string"/>
+                                                      <xsd:attribute name="_Value"
+                                                                     type="xsd:integer"/>
+                                                    </xsd:complexType>
+                                                  </xsd:element>
+                                                </xsd:sequence>
+                                              </xsd:complexType>
+                                            </xsd:element>
+                                          </xsd:sequence>
+                                          <xsd:attribute name="_StreetAddress"
+                                                         type="xsd:string"/>
+                                          <xsd:attribute name="_City"
+                                                         type="xsd:string"/>
+                                          <xsd:attribute name="_State"
+                                                         type="xsd:string"/>
+                                          <xsd:attribute name="_PostalCode"
+                                                         type="xsd:integer"/>
+                                          <xsd:attribute name="BorrowerResidencyDurationMonths"
+                                                         type="xsd:integer"/>
+                                          <xsd:attribute name="BorrowerResidencyDurationYears"
+                                                         type="xsd:integer"/>
+                                          <xsd:attribute name="BorrowerResidencyType"
+                                                         type="xsd:string"/>
+                                        </xsd:complexType>
+                                      </xsd:element>
+                                      <xsd:element name="EMPLOYER"
+                                                   maxOccurs="unbounded"
+                                                   minOccurs="0">
+                                        <xsd:complexType>
+                                          <xsd:attribute name="_Name"
+                                                         type="xsd:string"/>
+                                          <xsd:attribute name="EmploymentCurrentIndicator"
+                                                         type="xsd:string"/>
+                                          <xsd:attribute name="EmploymentPositionDescription"
+                                                         type="xsd:string"/>
+                                          <xsd:attribute name="_City"
+                                                         type="xsd:string"/>
+                                          <xsd:attribute name="_State"
+                                                         type="xsd:string"/>
+                                          <xsd:attribute name="_PostalCode"
+                                                         type="xsd:integer"/>
+                                          <xsd:attribute name="EmploymentReportedDate"
+                                                         type="xsd:string"/>
+                                        </xsd:complexType>
+                                      </xsd:element>
+                                      <xsd:element name="_ALIAS"
+                                                   maxOccurs="unbounded"
+                                                   minOccurs="0">
+                                        <xsd:complexType>
+                                          <xsd:attribute name="_FirstName"
+                                                         type="xsd:string"/>
+                                          <xsd:attribute name="_LastName"
+                                                         type="xsd:string"/>
+                                          <xsd:attribute name="_MiddleName"
+                                                         type="xsd:string"/>
+                                        </xsd:complexType>
+                                      </xsd:element>
+                                    </xsd:sequence>
+                                    <xsd:attribute name="_BirthDate"
+                                                   type="xsd:string"/>
+                                    <xsd:attribute name="_FirstName"
+                                                   type="xsd:string"/>
+                                    <xsd:attribute name="_LastName"
+                                                   type="xsd:string"/>
+                                    <xsd:attribute name="_MiddleName"
+                                                   type="xsd:string"/>
+                                    <xsd:attribute name="_SSN"
+                                                   type="xsd:integer"/>
+                                    <xsd:attribute name="_AgeYears"
+                                                   type="xsd:integer"/>
+                                    <xsd:attribute name="_UnparsedName"
+                                                   type="xsd:string"/>
+                                  </xsd:complexType>
+                                </xsd:element>
+                                <xsd:element name="_OWNING_BUREAU">
+                                  <xsd:complexType>
+                                    <xsd:attribute name="_Name"
+                                                   type="xsd:string"/>
+                                  </xsd:complexType>
+                                </xsd:element>
+                                <xsd:element name="_VARIATION"
+                                             minOccurs="0" maxOccurs="unbounded">
+                                  <xsd:complexType>
+                                    <xsd:attribute name="_Type" type="ellie:CREDITREPORTING_CreditFileVariationTypeEnumerated"/>
+                                  </xsd:complexType>
+                                </xsd:element>
+                                <xsd:element name="CREDIT_COMMENT"
+                                             minOccurs="0">
+                                  <xsd:complexType>
+                                    <xsd:sequence>
+                                      <xsd:element name="_Text"
+                                                   type="xsd:string"/>
+                                    </xsd:sequence>
+                                    <xsd:attribute name="_SourceType" type="ellie:CREDITREPORTING_CreditCommentSourceTypeEnumerated"/>
+                                    <xsd:attribute name="_Type" type="ellie:CREDITREPORTING_CreditCommentTypeEnumerated"/>
+                                    <xsd:attribute name="_TypeOtherDescription"
+                                                   type="xsd:string"/>
+                                  </xsd:complexType>
+                                </xsd:element>
+                              </xsd:sequence>
+                              <xsd:attribute name="CreditFileID"
+                                             type="xsd:string"/>
+                              <xsd:attribute name="BorrowerID"
+                                             type="xsd:string"/>
+                              <xsd:attribute name="CreditRepositorySourceType" type="ellie:CREDITREPORTING_CreditRepositorySourceTypeEnumerated"/>
+                              <xsd:attribute name="CreditScoreID"
+                                             type="xsd:string"/>
+                              <xsd:attribute name="_InfileDate"
+                                             type="xsd:string"/>
+                              <xsd:attribute name="_ResultStatusType" type="ellie:CREDITREPORTING_CreditFileResultStatusTypeEnumerated"/>
+                            </xsd:complexType>
+                          </xsd:element>
+                          <xsd:element name="CREDIT_SCORE"
+                                       maxOccurs="unbounded">
+                            <xsd:complexType>
+                              <xsd:sequence>
+                                <xsd:element name="_FACTOR"
+                                             maxOccurs="unbounded">
+                                  <xsd:complexType>
+                                    <xsd:attribute name="_Code"
+                                                   type="xsd:string"/>
+                                    <xsd:attribute name="_Text"
+                                                   type="xsd:string"/>
+                                  </xsd:complexType>
+                                </xsd:element>
+                              </xsd:sequence>
+                              <xsd:attribute name="CreditScoreID"
+                                             type="xsd:string"/>
+                              <xsd:attribute name="BorrowerID"
+                                             type="xsd:string"/>
+                              <xsd:attribute name="CreditFileID"
+                                             type="xsd:string"/>
+                              <xsd:attribute name="CreditReportIdentifier"
+                                             type="xsd:string"/>
+                              <xsd:attribute name="CreditRepositorySourceType" type="ellie:CREDITREPORTING_CreditRepositorySourceTypeEnumerated"/>
+                              <xsd:attribute name="_Date" type="xsd:string"/>
+                              <xsd:attribute name="_FACTAInquiriesIndicator"
+                                             type="xsd:string"/>
+                              <xsd:attribute name="_ModelNameType" type="ellie:CREDITREPORTING_CreditScoreModelNameTypeEnumerated"/>
+                              <xsd:attribute name="_Value" type="xsd:integer"/>
+                            </xsd:complexType>
+                          </xsd:element>
+                          <xsd:element name="CREDIT_COMMENT"
+                                       maxOccurs="unbounded">
+                            <xsd:complexType>
+                              <xsd:sequence>
+                                <xsd:element name="_Text" type="xsd:string"/>
+                              </xsd:sequence>
+                              <xsd:attribute name="_SourceType" type="ellie:CREDITREPORTING_CreditCommentSourceTypeEnumerated"/>
+                              <xsd:attribute name="_Type" type="ellie:CREDITREPORTING_CreditCommentTypeEnumerated"/>               
+                            </xsd:complexType>
+                          </xsd:element>
+                          <xsd:element name="CREDIT_CONSUMER_REFERRAL"
+                                       maxOccurs="unbounded">
+                            <xsd:complexType>
+                              <xsd:sequence>
+                                <xsd:element name="CONTACT_DETAIL">
+                                  <xsd:complexType>
+                                    <xsd:sequence>
+                                      <xsd:element name="CONTACT_POINT"
+                                                   maxOccurs="unbounded">
+                                        <xsd:complexType>
+                                          <xsd:attribute name="_Type" type="ellie:CREDITREPORTING_ContactPointTypeEnumerated"/>
+                                          <xsd:attribute name="_Value"
+                                                         type="xsd:string"/>
+                                        </xsd:complexType>
+                                      </xsd:element>
+                                    </xsd:sequence>
+                                  </xsd:complexType>
+                                </xsd:element>
+                              </xsd:sequence>
+                              <xsd:attribute name="_Name" type="xsd:string"/>
+                              <xsd:attribute name="_StreetAddress"
+                                             type="xsd:string"/>
+                              <xsd:attribute name="_City" type="xsd:string"/>
+                              <xsd:attribute name="_State" type="xsd:string"/>
+                              <xsd:attribute name="_PostalCode"
+                                             type="xsd:integer"/>
+                            </xsd:complexType>
+                          </xsd:element>
+                          <xsd:element name="CREDIT_SUMMARY"
+                                       maxOccurs="unbounded">
+                            <xsd:complexType>
+                              <xsd:sequence>
+                                <xsd:element name="_DATA_SET"
+                                             maxOccurs="unbounded">
+                                  <xsd:complexType>
+                                    <xsd:attribute name="_Name"
+                                                   type="xsd:string"/>
+                                    <xsd:attribute name="_Value"
+                                                   type="xsd:string"/>
+                                  </xsd:complexType>
+                                </xsd:element>
+                                <xsd:element name="_Text" type="xsd:string"/>
+                              </xsd:sequence>
+                              <xsd:attribute name="BorrowerID"
+                                             type="xsd:string"/>
+                              <xsd:attribute name="_Name" type="xsd:string"/>
+                            </xsd:complexType>
+                          </xsd:element>
+                          <xsd:element name="REGULATORY_PRODUCT"
+                                       maxOccurs="unbounded">
+                            <xsd:complexType>
+                              <xsd:sequence>
+                                <xsd:element name="_MATCH"/>
+                              </xsd:sequence>
+                              <xsd:attribute name="BorrowerID"
+                                             type="xsd:string"/>
+                              <xsd:attribute name="CreditRepositorySourceType" type="ellie:CREDITREPORTING_CreditRepositorySourceTypeEnumerated"/>
+                              <xsd:attribute name="CreditRepositorySourceTypeOtherDescription"
+                                             type="xsd:string"/>
+                              <xsd:attribute name="_SourceType" type="ellie:CREDITREPORTING_RegulatoryProductSourceTypeEnumerated"/>
+                              <xsd:attribute name="_ResultText"
+                                             type="xsd:string"/>
+                              <xsd:attribute name="_ResultStatusType" type="ellie:CREDITREPORTING_RegulatoryProductResultStatusTypeEnumerated"/>
+                            </xsd:complexType>
+                          </xsd:element>                          
+                          <xsd:element name="CREDIT_TRADE_REFERENCE"
+                                       maxOccurs="unbounded">
+                            <xsd:complexType>
+                              <xsd:sequence>
+                                <xsd:element name="CONTACT_DETAIL"
+                                             minOccurs="0">
+                                  <xsd:complexType>
+                                    <xsd:sequence>
+                                      <xsd:element name="CONTACT_POINT">
+                                        <xsd:complexType>
+                                          <xsd:attribute name="_Type" type="ellie:CREDITREPORTING_ContactPointTypeEnumerated"/>
+                                          <xsd:attribute name="_Value"
+                                                         type="xsd:string"/>
+                                        </xsd:complexType>
+                                      </xsd:element>
+                                    </xsd:sequence>
+                                  </xsd:complexType>
+                                </xsd:element>
+                                <xsd:element name="CREDIT_REPOSITORY">
+                                  <xsd:complexType>
+                                    <xsd:attribute name="_SourceType" type="ellie:CREDITREPORTING_CreditRepositorySourceTypeEnumerated"/>
+                                    <xsd:attribute name="_SubscriberCode"
+                                                   type="xsd:string"/>
+                                  </xsd:complexType>
+                                </xsd:element>
+                              </xsd:sequence>
+                              <xsd:attribute name="CreditTradeReferenceID"
+                                             type="xsd:string"/>
+                              <xsd:attribute name="_Name" type="xsd:string"/>
+                              <xsd:attribute name="_StreetAddress"
+                                             type="xsd:string"/>
+                              <xsd:attribute name="_City" type="xsd:string"/>
+                              <xsd:attribute name="_State" type="xsd:string"/>
+                              <xsd:attribute name="_PostalCode"
+                                             type="xsd:string"/>
+                              <xsd:attribute name="_StreetAddress2"
+                                             type="xsd:string"/>
+                            </xsd:complexType>
+                          </xsd:element>
+                          <xsd:element name="EMBEDDED_FILE">
+                            <xsd:complexType>
+                              <xsd:sequence>
+                                <xsd:element name="DOCUMENT" type="xsd:string"/>
+                              </xsd:sequence>
+                              <xsd:attribute name="_Type" type="xsd:string"/>
+                              <xsd:attribute name="_Version" type="xsd:float"/>
+                              <xsd:attribute name="_Name" type="xsd:string"/>
+                              <xsd:attribute name="_ID" type="xsd:string"/>
+                              <xsd:attribute name="_EncodingType" type="ellie:EnumeratedEmbeddedFileEncodingType"/>
+                            </xsd:complexType>
+                          </xsd:element>
+                          <xsd:element name="EXTENSION">
+                            <xsd:complexType>
+                              <xsd:sequence>
+                                <xsd:element name="EXTENSION_SECTION">
+                                  <xsd:complexType>
+                                    <xsd:sequence>
+                                      <xsd:element name="EXTENSION_SECTION_DATA">
+                                        <xsd:complexType>
+                                          <xsd:sequence>
+                                            <xsd:element name="PRODUCT_RESPONSE">
+                                              <xsd:complexType>
+                                                <xsd:sequence>
+                                                  <xsd:element name="WATCH_LIST_SEARCH_RESULTS">
+                                                    <xsd:complexType>
+                                                      <xsd:sequence>
+                                                        <xsd:element name="SEARCH_RESULT_SUMMARY">
+                                                          <xsd:complexType>
+                                                            <xsd:sequence>
+                                                              <xsd:element name="SEARCH_GROUP_RESULT"
+                                                                           maxOccurs="unbounded">
+                                                                <xsd:complexType>
+                                                                  <xsd:sequence>
+                                                                    <xsd:element name="SEARCH_CRITERIA">
+                                                                      <xsd:complexType>
+                                                                        <xsd:attribute name="_ID"
+                                                                                       type="xsd:string"/>
+                                                                        <xsd:attribute name="_Type"
+                                                                                       type="xsd:string"/>
+                                                                      </xsd:complexType>
+                                                                    </xsd:element>
+                                                                    <xsd:element name="SEARCH_RESULT">
+                                                                      <xsd:complexType>
+                                                                        <xsd:attribute name="_ID"
+                                                                                       type="xsd:string"/>
+                                                                        <xsd:attribute name="_Text"
+                                                                                       type="xsd:string"/>
+                                                                      </xsd:complexType>
+                                                                    </xsd:element>
+                                                                  </xsd:sequence>
+                                                                  <xsd:attribute name="_ID"
+                                                                                 type="xsd:string"/>
+                                                                  <xsd:attribute name="_BorrowerID"
+                                                                                 type="xsd:string"/>
+                                                                  <xsd:attribute name="_SearchGroup"
+                                                                                 type="xsd:string"/>
+                                                                </xsd:complexType>
+                                                              </xsd:element>
+                                                            </xsd:sequence>
+                                                            <xsd:attribute name="_ID"
+                                                                           type="xsd:string"/>
+                                                            <xsd:attribute name="_BorrowerID"
+                                                                           type="xsd:string"/>
+                                                            <xsd:attribute name="_TotalNumberOfMatches"
+                                                                           type="xsd:integer"/>
+                                                          </xsd:complexType>
+                                                        </xsd:element>
+                                                        <xsd:element name="WATCH_LIST_SEARCH_RESULT_INFO"
+                                                                     maxOccurs="unbounded">
+                                                          <xsd:complexType>
+                                                            <xsd:attribute name="_ID"
+                                                                           type="xsd:string"/>
+                                                            <xsd:attribute name="_BorrowerID"
+                                                                           type="xsd:string"/>
+                                                            <xsd:attribute name="_TotalNumberOfMatches"
+                                                                           type="xsd:integer"/>
+                                                          </xsd:complexType>
+                                                        </xsd:element>
+                                                      </xsd:sequence>
+                                                      <xsd:attribute name="_ID"
+                                                                     type="xsd:string"/>
+                                                      <xsd:attribute name="_StatusType"
+                                                                     type="xsd:string"/>
+                                                      <xsd:attribute name="_BorrowerID"
+                                                                     type="xsd:string"/>
+                                                    </xsd:complexType>
+                                                  </xsd:element>
+                                                  <xsd:element name="CREDIT_REPOSITORY_INCLUDED"
+                                                               maxOccurs="unbounded">
+                                                    <xsd:complexType>
+                                                      <xsd:attribute name="_OtherRepositoryName"
+                                                                     type="xsd:string"/>
+                                                    </xsd:complexType>
+                                                  </xsd:element>
+                                                </xsd:sequence>
+                                                <xsd:attribute name="_ProductName"
+                                                               type="xsd:string"/>
+                                              </xsd:complexType>
+                                            </xsd:element>
+                                          </xsd:sequence>
+                                          <xsd:attribute name="ExtensionSectionDataID"
+                                                         type="xsd:string"/>
+                                        </xsd:complexType>
+                                      </xsd:element>
+                                    </xsd:sequence>
+                                    <xsd:attribute name="ExtensionSectionID"
+                                                   type="xsd:string"/>
+                                    <xsd:attribute name="Organization"
+                                                   type="xsd:string"/>
+                                  </xsd:complexType>
+                                </xsd:element>
+                              </xsd:sequence>
+                              <xsd:attribute name="ExtensionID"
+                                             type="xsd:string"/>
+                            </xsd:complexType>
+                          </xsd:element>
+                        </xsd:sequence>
+                        <xsd:attribute name="MISMOVersionID" type="xsd:string"/>
+                        <xsd:attribute name="CreditReportMergeType"
+                                       type="xsd:string"/>
+                        <xsd:attribute name="CreditRatingCodeType"
+                                       type="xsd:string"/>
+                        <xsd:attribute name="CreditRatingCodeTypeOtherDescription"
+                                       type="xsd:string"/>
+                        <xsd:attribute name="CreditResponseID"
+                                       type="xsd:string"/>
+                        <xsd:attribute name="CreditReportType"
+                                       type="xsd:string"/>
+                        <xsd:attribute name="CreditReportIdentifier"
+                                       type="xsd:integer"/>
+                        <xsd:attribute name="CreditReportTransactionIdentifier"
+                                       type="xsd:integer"/>
+                        <xsd:attribute name="CreditReportFirstIssuedDate"
+                                       type="xsd:string"/>
+                        <xsd:attribute name="CreditReportLastUpdatedDate"
+                                       type="xsd:string"/>
+                      </xsd:complexType>
+                    </xsd:element>
+                  </xsd:sequence>
+                </xsd:complexType>
+              </xsd:element>
+            </xsd:sequence>
+            <xsd:attribute name="_ID" type="xsd:string"/>
+            <xsd:attribute name="ResponseDateTime" type="xsd:string"/>
+            <xsd:attribute name="InternalAccountIdentifier" type="xsd:integer"/>
+            <xsd:attribute name="LoginAccountPassword" type="xsd:string"/>
+          </xsd:complexType>
+        </xsd:element>
+      </xsd:sequence>
+      <xsd:attribute name="MISMOVersionID" type="xsd:string"/>
+      <xsd:attribute name="_ID" type="xsd:string"/>
+      <xsd:attribute name="EMCVersionID" type="xsd:string" fixed="1.0"/>
+      <xsd:attribute name="TransactionID" type="xsd:string"/>
+    </xsd:complexType>
+  </xsd:element>
+  
+  <!-- custom types -->
+  	<xsd:simpleType name="CREDITREPORTING_ContactPointTypeEnumerated">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Email"/>
+			<xsd:enumeration value="Fax"/>
+			<xsd:enumeration value="Other"/>
+			<xsd:enumeration value="Phone"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+        
+	<xsd:simpleType name="CREDITREPORTING_CreditReportPriceTypeEnumerated">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Net"/>
+			<xsd:enumeration value="Other"/>
+			<xsd:enumeration value="Tax"/>
+			<xsd:enumeration value="Total"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+        
+	<xsd:simpleType name="CREDITREPORTING_BorrowerPrintPositionTypeEnumerated">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Borrower"/>
+			<xsd:enumeration value="CoBorrower"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+        
+	<xsd:simpleType name="CREDITREPORTING_MaritalStatusTypeEnumerated">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Married"/>
+			<xsd:enumeration value="NotProvided"/>
+			<xsd:enumeration value="Separated"/>
+			<xsd:enumeration value="Unknown"/>
+			<xsd:enumeration value="Unmarried"/>
+		</xsd:restriction>
+	</xsd:simpleType>    
+        
+	<xsd:simpleType name="CREDITREPORTING_BorrowerResidencyTypeEnumerated">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Current"/>
+			<xsd:enumeration value="Prior"/>
+		</xsd:restriction>
+	</xsd:simpleType>   
+        
+	<xsd:simpleType name="CREDITREPORTING_VerificationStatusTypeEnumerated">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="NotVerified"/>
+			<xsd:enumeration value="ToBeVerified"/>
+			<xsd:enumeration value="Verified"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+        
+	<xsd:simpleType name="CREDITREPORTING_CreditLiabilityAccountOwnershipTypeEnumerated">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="AuthorizedUser"/>
+			<xsd:enumeration value="Comaker"/>
+			<xsd:enumeration value="Individual"/>
+			<xsd:enumeration value="JointContractualLiability"/>
+			<xsd:enumeration value="JointParticipating"/>
+			<xsd:enumeration value="Maker"/>
+			<xsd:enumeration value="OnBehalfOf"/>
+			<xsd:enumeration value="Terminated"/>
+			<xsd:enumeration value="Undesignated"/>
+			<xsd:enumeration value="Deceased"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+        
+	<xsd:simpleType name="CREDITREPORTING_CreditLiabilityAccountStatusTypeEnumerated">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Closed"/>
+			<xsd:enumeration value="Frozen"/>
+			<xsd:enumeration value="Open"/>
+			<xsd:enumeration value="Paid"/>
+			<xsd:enumeration value="Refinanced"/>
+			<xsd:enumeration value="Transferred"/>
+		</xsd:restriction>
+        </xsd:simpleType>
+        
+	<xsd:simpleType name="CREDITREPORTING_CreditLiabilityAccountTypeEnumerated">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="CreditLine"/>
+			<xsd:enumeration value="Installment"/>
+			<xsd:enumeration value="Mortgage"/>
+			<xsd:enumeration value="Open"/>
+			<xsd:enumeration value="Revolving"/>
+			<xsd:enumeration value="Unknown"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+        
+	<xsd:simpleType name="CREDITREPORTING_CreditLiabilityTermsSourceTypeEnumerated">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Calculated"/>
+			<xsd:enumeration value="Provided"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+        
+	<xsd:simpleType name="CREDITREPORTING_CreditBusinessTypeEnumerated">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Advertising"/>
+			<xsd:enumeration value="Automotive"/>
+			<xsd:enumeration value="Banking"/>
+			<xsd:enumeration value="Clothing"/>
+			<xsd:enumeration value="CollectionServices"/>
+			<xsd:enumeration value="Contractors"/>
+			<xsd:enumeration value="DepartmentAndMailOrder"/>
+			<xsd:enumeration value="Employment"/>
+			<xsd:enumeration value="FarmAndGardenSupplies"/>
+			<xsd:enumeration value="Finance"/>
+			<xsd:enumeration value="Government"/>
+			<xsd:enumeration value="Grocery"/>
+			<xsd:enumeration value="HomeFurnishing"/>
+			<xsd:enumeration value="Insurance"/>
+			<xsd:enumeration value="JewelryAndCamera"/>
+			<xsd:enumeration value="LumberAndHardware"/>
+			<xsd:enumeration value="MedicalAndHealth"/>
+			<xsd:enumeration value="MiscellaneousAndPublicRecord"/>
+			<xsd:enumeration value="OilAndNationalCreditCards"/>
+			<xsd:enumeration value="PersonalServicesNotMedical"/>
+			<xsd:enumeration value="RealEstateAndPublicAccommodation"/>
+			<xsd:enumeration value="SportingGoods"/>
+			<xsd:enumeration value="UtilitiesAndFuel"/>
+			<xsd:enumeration value="Wholesale"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+        
+	<xsd:simpleType name="CREDITREPORTING_CreditLoanTypeEnumerated">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Agriculture"/>
+			<xsd:enumeration value="Airplane"/>
+			<xsd:enumeration value="ApplianceOrFurniture"/>
+			<xsd:enumeration value="AttorneyFees"/>
+			<xsd:enumeration value="AutoLease"/>
+			<xsd:enumeration value="AutoLoanEquityTransfer"/>
+			<xsd:enumeration value="Automobile"/>
+			<xsd:enumeration value="AutoRefinance"/>
+			<xsd:enumeration value="Boat"/>
+			<xsd:enumeration value="Business"/>
+			<xsd:enumeration value="BusinessCreditCard"/>
+			<xsd:enumeration value="ChargeAccount"/>
+			<xsd:enumeration value="CheckCreditOrLineOfCredit"/>
+			<xsd:enumeration value="ChildSupport"/>
+			<xsd:enumeration value="Collection"/>
+			<xsd:enumeration value="CollectionAttorney"/>
+			<xsd:enumeration value="Comaker"/>
+			<xsd:enumeration value="CombinedCreditPlan"/>
+			<xsd:enumeration value="CommercialCreditObligation"/>
+			<xsd:enumeration value="CommercialLineOfCredit"/>
+			<xsd:enumeration value="CommercialMortgage"/>
+			<xsd:enumeration value="ConditionalSalesContract"/>
+			<xsd:enumeration value="Consolidation"/>
+			<xsd:enumeration value="ConventionalRealEstateMortgage"/>
+			<xsd:enumeration value="CreditCard"/>
+			<xsd:enumeration value="CreditLineSecured"/>
+			<xsd:enumeration value="DebitCard"/>
+			<xsd:enumeration value="DebtCounselingService"/>
+			<xsd:enumeration value="DepositRelated"/>
+			<xsd:enumeration value="Educational"/>
+			<xsd:enumeration value="Employment"/>
+			<xsd:enumeration value="FactoringCompanyAccount"/>
+			<xsd:enumeration value="FamilySupport"/>
+			<xsd:enumeration value="FarmersHomeAdministrationFHMA"/>
+			<xsd:enumeration value="FederalConsolidatedLoan"/>
+			<xsd:enumeration value="FHAComakerNotBorrower"/>
+			<xsd:enumeration value="FHAHomeImprovement"/>
+			<xsd:enumeration value="FHARealEstateMortgage"/>
+			<xsd:enumeration value="FinanceStatement"/>
+			<xsd:enumeration value="GovernmentBenefit"/>
+			<xsd:enumeration value="GovernmentEmployeeAdvance"/>
+			<xsd:enumeration value="GovernmentFeeForService"/>
+			<xsd:enumeration value="GovernmentFine"/>
+			<xsd:enumeration value="GovernmentGrant"/>
+			<xsd:enumeration value="GovernmentMiscellaneousDebt"/>
+			<xsd:enumeration value="GovernmentOverpayment"/>
+			<xsd:enumeration value="GovernmentSecuredDirectLoan"/>
+			<xsd:enumeration value="GovernmentSecuredGuaranteeLoan"/>
+			<xsd:enumeration value="GovernmentUnsecuredDirectLoan"/>
+			<xsd:enumeration value="GovernmentUnsecuredGuaranteeLoan"/>
+			<xsd:enumeration value="HomeEquityLineOfCredit"/>
+			<xsd:enumeration value="HomeImprovement"/>
+			<xsd:enumeration value="HouseholdGoods"/>
+			<xsd:enumeration value="HouseholdGoodsAndOtherCollateralAuto"/>
+			<xsd:enumeration value="HouseholdGoodsSecured"/>
+			<xsd:enumeration value="InstallmentLoan"/>
+			<xsd:enumeration value="InstallmentSalesContract"/>
+			<xsd:enumeration value="InsuranceClaims"/>
+			<xsd:enumeration value="Lease"/>
+			<xsd:enumeration value="LenderPlacedInsurance"/>
+			<xsd:enumeration value="ManualMortgage"/>
+			<xsd:enumeration value="MedicalDebt"/>
+			<xsd:enumeration value="MobileHome"/>
+			<xsd:enumeration value="Mortgage"/>
+			<xsd:enumeration value="NoteLoan"/>
+			<xsd:enumeration value="NoteLoanWithComaker"/>
+			<xsd:enumeration value="Other"/>
+			<xsd:enumeration value="PartiallySecured"/>
+			<xsd:enumeration value="PersonalLoan"/>
+			<xsd:enumeration value="RealEstateJuniorLiens"/>
+			<xsd:enumeration value="RealEstateLoanEquityTransfer"/>
+			<xsd:enumeration value="RealEstateMortgageWithoutOtherCollateral"/>
+			<xsd:enumeration value="RealEstateSpecificTypeUnknown"/>
+			<xsd:enumeration value="Recreational"/>
+			<xsd:enumeration value="RecreationalVehicle"/>
+			<xsd:enumeration value="Refinance"/>
+			<xsd:enumeration value="RefundAnticipationLoan"/>
+			<xsd:enumeration value="RentalAgreement"/>
+			<xsd:enumeration value="ResidentialLoan"/>
+			<xsd:enumeration value="ReturnedCheck"/>
+			<xsd:enumeration value="RevolvingBusinessLines"/>
+			<xsd:enumeration value="Secured"/>
+			<xsd:enumeration value="SecuredByCosigner"/>
+			<xsd:enumeration value="SecuredCreditCard"/>
+			<xsd:enumeration value="SecuredHomeImprovement"/>
+			<xsd:enumeration value="SinglePaymentLoan"/>
+			<xsd:enumeration value="SpouseSupport"/>
+			<xsd:enumeration value="SummaryOfAccountsWithSameStatus"/>
+			<xsd:enumeration value="TimeSharedLoan"/>
+			<xsd:enumeration value="Title1Loan"/>
+			<xsd:enumeration value="UnknownLoanType"/>
+			<xsd:enumeration value="Unsecured"/>
+			<xsd:enumeration value="VeteransAdministrationLoan"/>
+			<xsd:enumeration value="VeteransAdministrationRealEstateMortgage"/>
+			<xsd:enumeration value="BiMonthlyMortgageTermInYears"/>
+			<xsd:enumeration value="ConstructionLoan"/>
+			<xsd:enumeration value="DeferredStudentLoan"/>
+			<xsd:enumeration value="SecondMortgage"/>
+			<xsd:enumeration value="SemiMonthlyMortgagePayment"/>
+			<xsd:enumeration value="Camper"/>
+			<xsd:enumeration value="ConditionalSalesContractRefinance"/>
+			<xsd:enumeration value="HomeEquity"/>
+			<xsd:enumeration value="ManufacturedHome"/>
+			<xsd:enumeration value="MobilePhone"/>
+			<xsd:enumeration value="UtilityCompany"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+        
+	<xsd:simpleType name="CREDITREPORTING_CreditPublicRecordAccountOwnershipTypeEnumerated">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Individual"/>
+			<xsd:enumeration value="Joint"/>
+			<xsd:enumeration value="Terminated"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+        
+	<xsd:simpleType name="CREDITREPORTING_CreditPublicRecordTypeEnumerated">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Annulment"/>
+			<xsd:enumeration value="Attachment"/>
+			<xsd:enumeration value="BankruptcyChapter11"/>
+			<xsd:enumeration value="BankruptcyChapter12"/>
+			<xsd:enumeration value="BankruptcyChapter13"/>
+			<xsd:enumeration value="BankruptcyChapter7"/>
+			<xsd:enumeration value="BankruptcyChapter7Involuntary"/>
+			<xsd:enumeration value="BankruptcyChapter7Voluntary"/>
+			<xsd:enumeration value="BankruptcyTypeUnknown"/>
+			<xsd:enumeration value="Collection"/>
+			<xsd:enumeration value="CustodyAgreement"/>
+			<xsd:enumeration value="DivorceDecree"/>
+			<xsd:enumeration value="FicticiousName"/>
+			<xsd:enumeration value="FinancialCounseling"/>
+			<xsd:enumeration value="FinancingStatement"/>
+			<xsd:enumeration value="ForcibleDetainer"/>
+			<xsd:enumeration value="Foreclosure"/>
+			<xsd:enumeration value="Garnishment"/>
+			<xsd:enumeration value="Judgment"/>
+			<xsd:enumeration value="LawSuit"/>
+			<xsd:enumeration value="Lien"/>
+			<xsd:enumeration value="NonResponsibility"/>
+			<xsd:enumeration value="NoticeOfDefault"/>
+			<xsd:enumeration value="Other"/>
+			<xsd:enumeration value="PublicSale"/>
+			<xsd:enumeration value="RealEstateRecording"/>
+			<xsd:enumeration value="Repossession"/>
+			<xsd:enumeration value="SupportDebt"/>
+			<xsd:enumeration value="TaxLienCity"/>
+			<xsd:enumeration value="TaxLienCounty"/>
+			<xsd:enumeration value="TaxLienFederal"/>
+			<xsd:enumeration value="TaxLienOther"/>
+			<xsd:enumeration value="TaxLienState"/>
+			<xsd:enumeration value="Trusteeship"/>
+			<xsd:enumeration value="Unknown"/>
+			<xsd:enumeration value="UnlawfulDetainer"/>
+			<xsd:enumeration value="ChildSupport"/>
+			<xsd:enumeration value="FamilySupport"/>
+			<xsd:enumeration value="MechanicsLien"/>
+			<xsd:enumeration value="MedicalLien"/>
+			<xsd:enumeration value="SpouseSupport"/>
+		</xsd:restriction>
+	</xsd:simpleType> 
+
+	<xsd:simpleType name="CREDITREPORTING_CreditRepositorySourceTypeEnumerated">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Equifax"/>
+			<xsd:enumeration value="Experian"/>
+			<xsd:enumeration value="MergedData"/>
+			<xsd:enumeration value="Other"/>
+			<xsd:enumeration value="TransUnion"/>
+		</xsd:restriction>
+	</xsd:simpleType>        
+        
+	<xsd:simpleType name="CREDITREPORTING_CreditFileResultStatusTypeEnumerated">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="FileReturned"/>
+			<xsd:enumeration value="NoFileReturnedCreditFreeze"/>
+			<xsd:enumeration value="NoFileReturnedBorrowerIsAMinor"/>
+			<xsd:enumeration value="NoFileReturnedNoHit"/>
+			<xsd:enumeration value="NoFileReturnedThinFile"/>
+			<xsd:enumeration value="NoFileReturnedFraudulentRequestData"/>
+			<xsd:enumeration value="NoFileReturnedBadAccessCode"/>
+			<xsd:enumeration value="NoFileReturnedInadequateRequestData"/>
+			<xsd:enumeration value="NoFileReturnedError"/>
+			<xsd:enumeration value="Other"/>
+		</xsd:restriction>
+	</xsd:simpleType>        
+        
+	<xsd:simpleType name="CREDITREPORTING_CreditFileAlertMessageCategoryTypeEnumerated">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="CreditFileSuppressed"/>
+			<xsd:enumeration value="DeathClaim"/>
+			<xsd:enumeration value="DemographicsVerification"/>
+			<xsd:enumeration value="FACTAActiveDuty"/>
+			<xsd:enumeration value="FACTAAddressDiscrepancy"/>
+			<xsd:enumeration value="FACTAFraudVictimExtended"/>
+			<xsd:enumeration value="FACTAFraudVictimInitial"/>
+			<xsd:enumeration value="FACTARiskScoreValue"/>
+			<xsd:enumeration value="FraudVictim"/>
+			<xsd:enumeration value="Other"/>
+			<xsd:enumeration value="SSNVerification"/>
+		</xsd:restriction>
+	</xsd:simpleType>        
+        
+	<xsd:simpleType name="CREDITREPORTING_CreditFileAlertMessageTypeEnumerated">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="EquifaxSAFESCAN"/>
+			<xsd:enumeration value="EquifaxSSNVerified"/>
+			<xsd:enumeration value="ExperianFACSPlus"/>
+			<xsd:enumeration value="TransUnionHAWKAlert"/>
+			<xsd:enumeration value="TransUnionHighRiskFraudAlert"/>
+			<xsd:enumeration value="TransUnionIDMismatchAlert"/>
+			<xsd:enumeration value="TransUnionTransAlert"/>
+			<xsd:enumeration value="ExperianFraudShield"/>
+			<xsd:enumeration value="Other"/>
+		</xsd:restriction>
+	</xsd:simpleType>  
+
+	<xsd:simpleType name="CREDITREPORTING_CreditFileVariationTypeEnumerated">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="DifferentAddress"/>
+			<xsd:enumeration value="DifferentBirthDate"/>
+			<xsd:enumeration value="DifferentGeneration"/>
+			<xsd:enumeration value="DifferentLastName"/>
+			<xsd:enumeration value="DifferentName"/>
+			<xsd:enumeration value="DifferentSSN"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+ 
+	<xsd:simpleType name="CREDITREPORTING_CreditCommentSourceTypeEnumerated">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Borrower"/>
+			<xsd:enumeration value="CreditBureau"/>
+			<xsd:enumeration value="Equifax"/>
+			<xsd:enumeration value="Experian"/>
+			<xsd:enumeration value="Lender"/>
+			<xsd:enumeration value="RepositoryBureau"/>
+			<xsd:enumeration value="TransUnion"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:simpleType name="CREDITREPORTING_CreditCommentTypeEnumerated">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="BureauRemarks"/>
+			<xsd:enumeration value="ConsumerStatement"/>
+			<xsd:enumeration value="Instruction"/>
+			<xsd:enumeration value="Other"/>
+			<xsd:enumeration value="PublicRecordText"/>
+			<xsd:enumeration value="StatusCode"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+        
+	<xsd:simpleType name="CREDITREPORTING_CreditScoreModelNameTypeEnumerated">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="EquifaxBeacon"/>
+			<xsd:enumeration value="EquifaxBeaconAuto"/>
+			<xsd:enumeration value="EquifaxBeaconBankcard"/>
+			<xsd:enumeration value="EquifaxBeaconInstallment"/>
+			<xsd:enumeration value="EquifaxBeaconPersonalFinance"/>
+			<xsd:enumeration value="EquifaxBeacon5.0"/>
+			<xsd:enumeration value="EquifaxBeacon5.0Auto"/>
+			<xsd:enumeration value="EquifaxBeacon5.0Bankcard"/>
+			<xsd:enumeration value="EquifaxBeacon5.0Installment"/>
+			<xsd:enumeration value="EquifaxBeacon5.0PersonalFinance"/>
+			<xsd:enumeration value="EquifaxDAS"/>
+			<xsd:enumeration value="EquifaxEnhancedBeacon"/>
+			<xsd:enumeration value="EquifaxEnhancedDAS"/>
+			<xsd:enumeration value="EquifaxMarketMax"/>
+			<xsd:enumeration value="EquifaxMortgageScore"/>
+			<xsd:enumeration value="EquifaxPinnacle"/>
+			<xsd:enumeration value="EquifaxPinnacle2.0"/>
+			<xsd:enumeration value="ExperianFairIsaac"/>
+			<xsd:enumeration value="ExperianFairIsaacAdvanced"/>
+			<xsd:enumeration value="ExperianFairIsaacAdvanced2.0"/>
+			<xsd:enumeration value="ExperianFairIsaacAuto"/>
+			<xsd:enumeration value="ExperianFairIsaacBankcard"/>
+			<xsd:enumeration value="ExperianFairIsaacInstallment"/>
+			<xsd:enumeration value="ExperianFairIsaacPersonalFinance"/>
+			<xsd:enumeration value="ExperianMDSBankruptcyII"/>
+			<xsd:enumeration value="ExperianNewNationalEquivalency"/>
+			<xsd:enumeration value="ExperianNewNationalRisk"/>
+			<xsd:enumeration value="ExperianOldNationalRisk"/>
+			<xsd:enumeration value="ExperianScorexPLUS"/>
+			<xsd:enumeration value="FICOExpansionScore"/>
+			<xsd:enumeration value="FICORiskScoreClassic98"/>
+			<xsd:enumeration value="FICORiskScoreClassicAuto98"/>
+			<xsd:enumeration value="FICORiskScoreClassicBankcard98"/>
+			<xsd:enumeration value="FICORiskScoreClassicInstallmentLoan98"/>
+			<xsd:enumeration value="FICORiskScoreClassicPersonalFinance98"/>
+			<xsd:enumeration value="FICORiskScoreClassic04"/>
+			<xsd:enumeration value="FICORiskScoreNextGen00"/>
+			<xsd:enumeration value="FICORiskScoreNextGen03"/>
+			<xsd:enumeration value="Other"/>
+			<xsd:enumeration value="TransUnionDelphi"/>
+			<xsd:enumeration value="TransUnionEmpirica"/>
+			<xsd:enumeration value="TransUnionEmpiricaAuto"/>
+			<xsd:enumeration value="TransUnionEmpiricaBankcard"/>
+			<xsd:enumeration value="TransUnionEmpiricaInstallment"/>
+			<xsd:enumeration value="TransUnionEmpiricaPersonalFinance"/>
+			<xsd:enumeration value="TransUnionNewDelphi"/>
+			<xsd:enumeration value="TransUnionPrecision"/>
+			<xsd:enumeration value="TransUnionPrecision03"/>
+			<xsd:enumeration value="EquifaxBankruptcyNavigatorIndex02781"/>
+			<xsd:enumeration value="EquifaxBankruptcyNavigatorIndex02782"/>
+			<xsd:enumeration value="EquifaxBankruptcyNavigatorIndex02783"/>
+			<xsd:enumeration value="EquifaxBankruptcyNavigatorIndex02784"/>
+			<xsd:enumeration value="EquifaxVantageScore"/>
+			<xsd:enumeration value="ExperianVantageScore"/>
+			<xsd:enumeration value="TransUnionVantageScore"/>
+			<xsd:enumeration value="ExperianFICOClassicV3"/>
+		</xsd:restriction>
+	</xsd:simpleType> 
+        
+	<xsd:simpleType name="CREDITREPORTING_RegulatoryProductSourceTypeEnumerated">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="OFAC"/>
+			<xsd:enumeration value="Other"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+        
+	<xsd:simpleType name="CREDITREPORTING_RegulatoryProductResultStatusTypeEnumerated">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Clear"/>
+			<xsd:enumeration value="Error"/>
+			<xsd:enumeration value="Hit"/>
+			<xsd:enumeration value="Other"/>
+		</xsd:restriction>
+	</xsd:simpleType>        
+        
+	<xsd:simpleType name="EnumeratedEmbeddedFileEncodingType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Base64"/>
+			<xsd:enumeration value="QuotedPrintable"/>
+			<xsd:enumeration value="DeflateBase64"/>
+			<xsd:enumeration value="GzipBase64"/>
+			<xsd:enumeration value="Other"/>
+		</xsd:restriction>
+	</xsd:simpleType>        
+</xsd:schema>]]></con:schema>
+    <con:targetNamespace>http://www.elliemae.com/service/credit</con:targetNamespace>
+</con:schemaEntry>

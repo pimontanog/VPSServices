@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:wsdlEntry xmlns:con="http://www.bea.com/wli/sb/resources/config">
+    <con:wsdl><![CDATA[<wsdl:definitions name="CredcoVPSEMC" targetNamespace="http://www.elliemae.com/vps/contract" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:evps="http://www.elliemae.com/vps/contract" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    
+    <wsdl:documentation> 
+    This service provides a common interface to mock Credco VPS
+    </wsdl:documentation>
+
+    <wsdl:types>
+        <xsd:schema>
+            <xsd:import namespace="http://www.elliemae.com/vps/contract" schemaLocation="../../../CreditService/Resource/xsd/VPSEMC.xsd"/>
+        </xsd:schema>
+    </wsdl:types>
+
+    <wsdl:portType name="CreditEndPoint">
+        <wsdl:documentation>credit operations</wsdl:documentation>
+        
+        <wsdl:operation name="requestCredit">
+            <wsdl:documentation>get the credit score requested from the matching vendor</wsdl:documentation>
+            <wsdl:input message="evps:CreditRequestMsg"/>
+            <wsdl:output message="evps:CreditResponseMsg"/>
+        </wsdl:operation>
+    </wsdl:portType>
+
+    <wsdl:message name="CreditRequestMsg">
+        <wsdl:part name="input" element="evps:REQUEST"/>
+    </wsdl:message>
+     
+    <wsdl:message name="CreditResponseMsg">
+        <wsdl:part name="output" element="evps:RESPONSE"/>
+    </wsdl:message>
+
+    <wsdl:binding name="CreditBinding" type="evps:CreditEndPoint">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="requestCredit">
+        <soap:operation soapAction="http://www.elliemae.com/vps/contract"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+
+</wsdl:definitions>]]></con:wsdl>
+    <con:dependencies>
+        <con:schemaRef isInclude="false" schemaLocation="../../../CreditService/Resource/xsd/VPSEMC.xsd" namespace="http://www.elliemae.com/vps/contract" ref="EllieMaeNetwork_v1.0/CreditService/Resource/xsd/VPSEMC"/>
+    </con:dependencies>
+    <con:targetNamespace>http://www.elliemae.com/vps/contract</con:targetNamespace>
+</con:wsdlEntry>

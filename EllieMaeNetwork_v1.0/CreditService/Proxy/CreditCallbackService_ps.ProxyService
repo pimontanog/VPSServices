@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xml-fragment xmlns:ser="http://www.bea.com/wli/sb/services" xmlns:tran="http://www.bea.com/wli/sb/transports" xmlns:env="http://www.bea.com/wli/config/env" xmlns:http="http://www.bea.com/wli/sb/transports/http" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://www.bea.com/wli/sb/pipeline/config" xmlns:con1="http://www.bea.com/wli/sb/stages/transform/config" xmlns:con2="http://www.bea.com/wli/sb/stages/config" xmlns:con3="http://www.bea.com/wli/sb/stages/publish/config" xmlns:con4="http://www.bea.com/wli/sb/stages/routing/config">
+  <ser:coreEntry isProxy="true" isEnabled="true" isTracingEnabled="false">
+    <ser:binding type="SOAP" isSoap12="false" xsi:type="con:SoapBindingType" xmlns:con="http://www.bea.com/wli/sb/services/bindings/config">
+      <con:wsdl ref="EllieMaeNetwork_v1.0/CreditService/Resource/wsdl/CreditExternal"/>
+      <con:binding>
+        <con:name>CreditCallbackBinding</con:name>
+        <con:namespace>http://www.elliemae.com/service/credit</con:namespace>
+      </con:binding>
+      <con:selector type="SOAP body"/>
+    </ser:binding>
+    <ser:monitoring isEnabled="false">
+      <ser:aggregationInterval>10</ser:aggregationInterval>
+      <ser:pipelineMonitoringLevel>Pipeline</ser:pipelineMonitoringLevel>
+    </ser:monitoring>
+    <ser:reporting>true</ser:reporting>
+    <ser:logging isEnabled="true">
+      <ser:logLevel>debug</ser:logLevel>
+    </ser:logging>
+    <ser:sla-alerting isEnabled="true">
+      <ser:alertLevel>normal</ser:alertLevel>
+    </ser:sla-alerting>
+    <ser:pipeline-alerting isEnabled="true">
+      <ser:alertLevel>normal</ser:alertLevel>
+    </ser:pipeline-alerting>
+    <ser:ws-policy>
+      <ser:binding-mode>wsdl-policy-attachments</ser:binding-mode>
+    </ser:ws-policy>
+  </ser:coreEntry>
+  <ser:endpointConfig>
+    <tran:provider-id>http</tran:provider-id>
+    <tran:inbound>true</tran:inbound>
+    <tran:URI>
+      <env:value>/EllieMaeNetwork_v1.0/CreditService/Proxy/CreditCallbackService_ps</env:value>
+    </tran:URI>
+    <tran:inbound-properties/>
+    <tran:all-headers>true</tran:all-headers>
+    <tran:provider-specific>
+      <http:inbound-properties/>
+    </tran:provider-specific>
+  </ser:endpointConfig>
+  <ser:router errorHandler="_onErrorHandler-3319420257878959095-5bcab0a4.1490b11feca.-7fca">
+    <con:pipeline type="request" name="PipelinePairNode1_request">
+      <con:stage name="GetRoutingItems">
+        <con:context/>
+        <con:actions>
+          <con1:assign varName="replyTo">
+            <con2:id>_ActionId-9045188339884746939-29b02df5.1489e105541.-7dff</con2:id>
+            <con1:expr>
+              <con2:xqueryText>$header/wsa05:ReplyTo/wsa05:Address/text()</con2:xqueryText>
+            </con1:expr>
+          </con1:assign>
+          <con1:assign varName="messageid">
+            <con2:id>_ActionId-9045188339884746939-29b02df5.1489e105541.-7d00</con2:id>
+            <con1:expr>
+              <con2:xqueryText>$header/wsa05:RelatesTo/text()</con2:xqueryText>
+            </con1:expr>
+          </con1:assign>
+        </con:actions>
+      </con:stage>
+      <con:stage name="GetAuditItems">
+        <con:context>
+          <con2:varNsDecl namespace="http://www.elliemae.com/service/credit" prefix="cred"/>
+        </con:context>
+        <con:actions>
+          <con1:assign varName="AuditTransactionID">
+            <con2:id>_ActionId-9045188339884746939-29b02df5.1489e105541.-79e5</con2:id>
+            <con1:expr>
+              <con2:xqueryText>data($body/cred:RESPONSE_GROUP/@TransactionID)</con2:xqueryText>
+            </con1:expr>
+          </con1:assign>
+          <con1:assign varName="Response">
+            <con2:id>_ActionId-8821487364782454368--6eb6e510.1491ffe749f.-7e45</con2:id>
+            <con1:expr>
+              <con2:xqueryText>$body/cred:RESPONSE_GROUP</con2:xqueryText>
+            </con1:expr>
+          </con1:assign>
+        </con:actions>
+      </con:stage>
+    </con:pipeline>
+    <con:pipeline type="response" name="PipelinePairNode1_response">
+      <con:stage name="AuditEnd">
+        <con:context/>
+        <con:actions>
+          <con3:route>
+            <con2:id>_ActionId-9045188339884746939-29b02df5.1489e105541.-7a43</con2:id>
+            <con3:service ref="Shared_v1.0/SoaLog/Business/SoaLogService_bs" xsi:type="ref:BusinessServiceRef" xmlns:ref="http://www.bea.com/wli/sb/reference"/>
+            <con3:operation>update</con3:operation>
+            <con3:outboundTransform>
+              <con1:replace varName="body" contents-only="true">
+                <con2:id>_ActionId-9045188339884746939-29b02df5.1489e105541.-7a18</con2:id>
+                <con1:location>
+                  <con2:xpathText>.</con2:xpathText>
+                </con1:location>
+                <con1:expr>
+                  <con2:xqueryText><![CDATA[<soal:SoalogCollection xmlns:soal="http://xmlns.oracle.com/pcbpel/adapter/db/top/SoaLogService">
+    <soal:Soalog>
+        <soal:TransactionID>{$AuditTransactionID}</soal:TransactionID>
+        <soal:UpdateTimestamp>{fn:current-dateTime()}</soal:UpdateTimestamp>
+        <soal:Status>END</soal:Status>
+        <soal:OperationStep>Async reply completed</soal:OperationStep>
+    </soal:Soalog>
+</soal:SoalogCollection>]]></con2:xqueryText>
+                </con1:expr>
+              </con1:replace>
+              <con1:routing-options>
+                <con2:id>_ActionId-9045188339884746939-29b02df5.1489e105541.-797a</con2:id>
+                <con1:qualityOfService>exactly-once</con1:qualityOfService>
+              </con1:routing-options>
+            </con3:outboundTransform>
+          </con3:route>
+        </con:actions>
+      </con:stage>
+    </con:pipeline>
+    <con:pipeline type="error" name="_onErrorHandler-3319420257878959095-5bcab0a4.1490b11feca.-7fca">
+      <con:stage name="ErrorHandler">
+        <con:context/>
+        <con:actions>
+          <con3:route>
+            <con2:id>_ActionId-3319420257878959095-5bcab0a4.1490b11feca.-7fa0</con2:id>
+            <con3:service ref="Shared_v1.0/SoaLog/Business/SoaLogService_bs" xsi:type="ref:BusinessServiceRef" xmlns:ref="http://www.bea.com/wli/sb/reference"/>
+            <con3:operation>update</con3:operation>
+            <con3:outboundTransform>
+              <con1:replace contents-only="true" varName="body">
+                <con2:id>_ActionId-3319420257878959095-5bcab0a4.1490b11feca.-7f79</con2:id>
+                <con1:location>
+                  <con2:xpathText>.</con2:xpathText>
+                </con1:location>
+                <con1:expr>
+                  <con2:xqueryText><![CDATA[<soal:SoalogCollection xmlns:soal="http://xmlns.oracle.com/pcbpel/adapter/db/top/SoaLogService">
+    <soal:Soalog>
+        <soal:TransactionID>{$AuditTransactionID}</soal:TransactionID>
+        <soal:UpdateTimestamp>{fn:current-dateTime()}</soal:UpdateTimestamp>
+        <soal:Status>ERROR</soal:Status>
+        <soal:OperationStep>Failed on callback</soal:OperationStep>
+        <soal:ErrorCode>{$fault/ctx:errorCode/text()}</soal:ErrorCode>
+        <soal:ErrorDetails>{$fault/ctx:reason/text()}</soal:ErrorDetails>
+    </soal:Soalog>
+</soal:SoalogCollection>]]></con2:xqueryText>
+                </con1:expr>
+              </con1:replace>
+              <con1:routing-options>
+                <con2:id>_ActionId-3319420257878959095-5bcab0a4.1490b11feca.-7f51</con2:id>
+                <con1:qualityOfService>exactly-once</con1:qualityOfService>
+              </con1:routing-options>
+            </con3:outboundTransform>
+          </con3:route>
+        </con:actions>
+      </con:stage>
+    </con:pipeline>
+    <con:flow>
+      <con:pipeline-node name="PipelinePairNode1">
+        <con:request>PipelinePairNode1_request</con:request>
+        <con:response>PipelinePairNode1_response</con:response>
+      </con:pipeline-node>
+      <con:branch-node type="condition" name="BranchNode1">
+        <con:context/>
+        <con:branch-table variable="replyTo">
+          <con:branch name="DoCallback">
+            <con:operator>not equal to</con:operator>
+            <con:value>'http://www.w3.org/2005/08/ws-polling/HoldResponse'</con:value>
+            <con:flow>
+              <con:route-node name="RouteToClient">
+                <con:comment>this call actually performs callback operation towards original client</con:comment>
+                <con:context/>
+                <con:actions>
+                  <con4:route>
+                    <con2:id>_ActionId-8821487364782454368--6eb6e510.1491ffe749f.-7f57</con2:id>
+                    <con4:service ref="EllieMaeNetwork_v1.0/CreditService/Business/CreditCallbackDummyService_bs" xsi:type="ref:BusinessServiceRef" xmlns:ref="http://www.bea.com/wli/sb/reference"/>
+                    <con4:outboundTransform>
+                      <con1:routing-options>
+                        <con2:id>_ActionId-8821487364782454368--6eb6e510.1491ffe749f.-7f56</con2:id>
+                        <con1:uriExpr>
+                          <con2:xqueryText>$replyTo</con2:xqueryText>
+                        </con1:uriExpr>
+                      </con1:routing-options>
+                    </con4:outboundTransform>
+                    <con4:responseTransform/>
+                  </con4:route>
+                </con:actions>
+              </con:route-node>
+            </con:flow>
+          </con:branch>
+          <con:default-branch>
+            <con:flow>
+              <con:route-node name="RouteToCreditSaveResponse">
+                <con:context>
+                  <con2:varNsDecl namespace="http://www.elliemae.com/service/credit" prefix="cred"/>
+                </con:context>
+                <con:actions>
+                  <con4:route>
+                    <con2:id>_ActionId-8821487364782454368--6eb6e510.1491ffe749f.-7f36</con2:id>
+                    <con4:service ref="EllieMaeNetwork_v1.0/CreditService/Proxy/CreditSaveResponse_ps" xsi:type="ref:ProxyRef" xmlns:ref="http://www.bea.com/wli/sb/reference"/>
+                    <con4:operation>callbackCredit</con4:operation>
+                    <con4:outboundTransform>
+                      <con1:routing-options>
+                        <con2:id>_ActionId-8821487364782454368--6eb6e510.1491ffe749f.-7ef3</con2:id>
+                        <con1:qualityOfService>best-effort</con1:qualityOfService>
+                      </con1:routing-options>
+                    </con4:outboundTransform>
+                    <con4:responseTransform/>
+                  </con4:route>
+                </con:actions>
+              </con:route-node>
+            </con:flow>
+          </con:default-branch>
+        </con:branch-table>
+      </con:branch-node>
+    </con:flow>
+  </ser:router>
+</xml-fragment>

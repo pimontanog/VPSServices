@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:wsdlEntry xmlns:con="http://www.bea.com/wli/sb/resources/config">
+    <con:wsdl><![CDATA[<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" 
+	xmlns:tns="http://www.elliemae.com/credit/CreditGetResponse/" 
+	xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" 
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+	xmlns:top="http://xmlns.oracle.com/pcbpel/adapter/db/top/CreditResponse"
+	targetNamespace="http://www.elliemae.com/credit/CreditGetResponse/">
+  <wsdl:types>
+    <xsd:schema xmlns="http://www.w3.org/2001/XMLSchema">
+		<import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/CreditResponse" schemaLocation="../xsd/CreditResponse_table.xsd"/>
+    </xsd:schema>
+  </wsdl:types>
+
+  <wsdl:message name="CreditResponseCollection_msg">
+    <wsdl:part element="top:CreditResponseCollection" name="CreditResponseCollection"/>
+  </wsdl:message>
+  <wsdl:message name="CreditResponseSelect_inputParameters">
+    <wsdl:part name="CreditResponseSelect_inputParameters" element="top:CreditResponseSelect_p1_messageidInputParameters"/>
+  </wsdl:message>
+  <wsdl:message name="selectByPrimaryKey_inputParameters">
+    <wsdl:part name="selectByPrimaryKey_inputParameters" element="top:CreditResponsePrimaryKey"/>
+  </wsdl:message>
+    
+  <wsdl:portType name="CreditGetResponse">
+    <wsdl:operation name="CreditResponseByMsgID">
+      <wsdl:input message="tns:CreditResponseSelect_inputParameters"/>
+      <wsdl:output message="tns:CreditResponseCollection_msg"/>
+    </wsdl:operation>
+    <wsdl:operation name="CreditResponseByTrxID">
+      <wsdl:input message="tns:selectByPrimaryKey_inputParameters"/>
+      <wsdl:output message="tns:CreditResponseCollection_msg"/>
+    </wsdl:operation>
+  </wsdl:portType>
+
+  <wsdl:binding name="CreditGetResponseSOAP" type="tns:CreditGetResponse">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="CreditResponseByMsgID">
+      <soap:operation soapAction="http://www.elliemae.com/credit/CreditGetResponse/CreditResponseByMsgID"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreditResponseByTrxID">
+      <soap:operation soapAction="http://www.elliemae.com/credit/CreditGetResponse/CreditResponseByTrxID"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+
+</wsdl:definitions>]]></con:wsdl>
+    <con:dependencies>
+        <con:schemaRef isInclude="false" schemaLocation="../xsd/CreditResponse_table.xsd" namespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/CreditResponse" ref="EllieMaeNetwork_v1.0/CreditService/Resource/xsd/CreditResponse_table"/>
+    </con:dependencies>
+    <con:targetNamespace>http://www.elliemae.com/credit/CreditGetResponse/</con:targetNamespace>
+</con:wsdlEntry>

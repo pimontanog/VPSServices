@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:xmlEntry xmlns:con="http://www.bea.com/wli/sb/resources/config">
+    <con:xml-content><![CDATA[<?xml version = '1.0' encoding = 'UTF-8'?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+   <entry key="root_descriptor_alias">dbo.SOALOG</entry>
+   <entry key="dbo.SOALOG.ErrorSummary:db_column_size">100</entry>
+   <entry key="dbo.SOALOG.RawMessage:db_column_not_null">false</entry>
+   <entry key="dbo.SOALOG.Status:db_column_type">VARCHAR</entry>
+   <entry key="dbo.SOALOG.SessionID:db_column_type">VARCHAR</entry>
+   <entry key="dbo.SOALOG.TransactionID:db_column_not_null">true</entry>
+   <entry key="dbo.SOALOG.OperationStep:db_column_type">VARCHAR</entry>
+   <entry key="dbo.SOALOG.TransactionName:db_column_type">VARCHAR</entry>
+   <entry key="dbo.SOALOG.Status:db_column_size">50</entry>
+   <entry key="dbo.SOALOG.CreationTimestamp:db_column_type">DATETIME</entry>
+   <entry key="dbo.SOALOG.ComponentName:db_column_not_null">false</entry>
+   <entry key="dbo.SOALOG.SessionID:db_column_size">100</entry>
+   <entry key="dbo.SOALOG:db_column_12">ErrorDetails</entry>
+   <entry key="dbo.SOALOG.OperationStep:db_column_not_null">false</entry>
+   <entry key="dbo.SOALOG:db_column_11">ErrorSummary</entry>
+   <entry key="dbo.SOALOG:db_column_10">ErrorCode</entry>
+   <entry key="dbo.SOALOG.ErrorDetails:db_column_type">VARCHAR</entry>
+   <entry key="dbo.SOALOG.OperationStep:db_column_size">50</entry>
+   <entry key="dbo.SOALOG.RawMessage:db_column_type">VARCHAR</entry>
+   <entry key="dbo.SOALOG.TransactionName:db_column_size">200</entry>
+   <entry key="dbo.SOALOG.ComponentName:db_column_type">VARCHAR</entry>
+   <entry key="dbo.SOALOG:db_column_9">SessionID</entry>
+   <entry key="dbo.SOALOG:db_column_8">ClientID</entry>
+   <entry key="dbo.SOALOG:db_column_7">RawMessage</entry>
+   <entry key="dbo.SOALOG:db_column_6">OperationStep</entry>
+   <entry key="dbo.SOALOG:db_column_5">ComponentName</entry>
+   <entry key="dbo.SOALOG:db_column_4">TransactionName</entry>
+   <entry key="dbo.SOALOG:db_column_3">Status</entry>
+   <entry key="dbo.SOALOG:db_column_2">UpdateTimestamp</entry>
+   <entry key="dbo.SOALOG.ClientID:db_column_type">VARCHAR</entry>
+   <entry key="dbo.SOALOG:db_column_1">CreationTimestamp</entry>
+   <entry key="dbo.SOALOG:db_column_0">TransactionID</entry>
+   <entry key="dbo.SOALOG.ErrorDetails:db_column_size">2147483647</entry>
+   <entry key="dbo.SOALOG.CreationTimestamp:db_column_not_null">false</entry>
+   <entry key="dbo.SOALOG.UpdateTimestamp:db_column_not_null">false</entry>
+   <entry key="dbo.SOALOG.ClientID:db_column_not_null">false</entry>
+   <entry key="dbo.SOALOG.RawMessage:db_column_size">2147483647</entry>
+   <entry key="dbo.SOALOG.ErrorCode:db_column_type">VARCHAR</entry>
+   <entry key="dbo.SOALOG.ComponentName:db_column_size">200</entry>
+   <entry key="dbo.SOALOG:db_table_type">TABLE</entry>
+   <entry key="dbo.SOALOG.UpdateTimestamp:db_column_type">DATETIME</entry>
+   <entry key="dbo.SOALOG.ErrorCode:db_column_not_null">false</entry>
+   <entry key="dbo.SOALOG.Status:db_column_not_null">true</entry>
+   <entry key="dbo.SOALOG.ClientID:db_column_size">100</entry>
+   <entry key="dbo.SOALOG.TransactionName:db_column_not_null">false</entry>
+   <entry key="dbo.SOALOG.TransactionID:db_column_type">VARCHAR</entry>
+   <entry key="dbo.SOALOG.ErrorSummary:db_column_not_null">false</entry>
+   <entry key="dbo.SOALOG.ErrorCode:db_column_size">50</entry>
+   <entry key="dbo.SOALOG.ErrorSummary:db_column_type">VARCHAR</entry>
+   <entry key="dbo.SOALOG.ErrorDetails:db_column_not_null">false</entry>
+   <entry key="dbo.SOALOG.TransactionID:db_column_size">50</entry>
+   <entry key="dbo.SOALOG.SessionID:db_column_not_null">false</entry>
+</properties>]]></con:xml-content>
+</con:xmlEntry>

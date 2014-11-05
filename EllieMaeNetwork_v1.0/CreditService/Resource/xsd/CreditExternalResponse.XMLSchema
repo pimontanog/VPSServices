@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:schemaEntry xmlns:con="http://www.bea.com/wli/sb/resources/config">
+    <con:schema><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+	xmlns:ellie="http://www.elliemae.com/service/credit"
+	targetNamespace="http://www.elliemae.com/service/credit" 
+	elementFormDefault="qualified">
+ <xsd:element name="EXTERNAL_RESPONSE">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="Transaction">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="ResponseTime" type="xsd:dateTime"/>
+              <xsd:element name="ID" type="xsd:string"/>
+              <xsd:element name="Status" type="xsd:string"/>
+              <xsd:element name="ErrorCode" type="xsd:string" minOccurs="0"/>
+              <xsd:element name="ErrorDescription" type="xsd:string" minOccurs="0"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>]]></con:schema>
+    <con:targetNamespace>http://www.elliemae.com/service/credit</con:targetNamespace>
+</con:schemaEntry>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:wsdlEntry xmlns:con="http://www.bea.com/wli/sb/resources/config">
+    <con:wsdl><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<definitions targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/SOAArtifacts/Project1/CreditResponse" name="CreditResponse-concrete" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://xmlns.oracle.com/pcbpel/adapter/db/SOAArtifacts/Project1/CreditResponse" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/SOAArtifacts/Project1/CreditResponse" location="../Resource/wsdl/CreditResponse.wsdl"/>
+  <binding name="CreditResponse_ptt-binding" type="tns:CreditResponse_ptt">
+    <soap:binding style="document" transport="http://www.bea.com/wli/sb/transports/jca"/>
+    <operation name="merge">
+      <soap:operation soapAction="merge"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+    </operation>
+    <operation name="insert">
+      <soap:operation soapAction="insert"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+    </operation>
+    <operation name="update">
+      <soap:operation soapAction="update"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+    </operation>
+    <operation name="delete">
+      <soap:operation soapAction="delete"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+    </operation>
+    <operation name="CreditResponseSelect">
+      <soap:operation soapAction="CreditResponseSelect"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="selectByPrimaryKey">
+      <soap:operation soapAction="selectByPrimaryKey"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="CreditResponse-service">
+    <port name="CreditResponse-port" binding="tns:CreditResponse_ptt-binding">
+      <soap:address location="jca://eis/DB/ServiceLayerDB"/>
+    </port>
+  </service>
+</definitions>]]></con:wsdl>
+    <con:dependencies>
+        <con:import location="../Resource/wsdl/CreditResponse.wsdl" namespace="http://xmlns.oracle.com/pcbpel/adapter/db/SOAArtifacts/Project1/CreditResponse">
+            <con:wsdl ref="EllieMaeNetwork_v1.0/CreditService/Resource/wsdl/CreditResponse"/>
+        </con:import>
+    </con:dependencies>
+    <con:targetNamespace>http://xmlns.oracle.com/pcbpel/adapter/db/SOAArtifacts/Project1/CreditResponse</con:targetNamespace>
+</con:wsdlEntry>

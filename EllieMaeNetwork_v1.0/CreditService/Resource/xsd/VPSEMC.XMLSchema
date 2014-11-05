@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:schemaEntry xmlns:con="http://www.bea.com/wli/sb/resources/config">
+    <con:schema><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns:evps="http://www.elliemae.com/vps/contract"
+            targetNamespace="http://www.elliemae.com/vps/contract"
+            elementFormDefault="qualified">
+  <xsd:element name="REQUEST">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="RequestData" type="xsd:string"/>
+        <xsd:element name="TransactionData" type="evps:TransactionDataType"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="RESPONSE">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="ResponseData" type="xsd:string"/>
+        <xsd:element name="TransactionData" type="evps:TransactionDataType"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:complexType name="TransactionDataType">
+    <xsd:sequence>
+      <xsd:element name="BranchIdentifier" type="xsd:string"/>
+      <xsd:element name="ClientIdentifier" type="xsd:string"/>
+      <xsd:element name="CompanyCode" type="xsd:string"/>
+      <xsd:element name="ConsumerApplication" type="xsd:string"/>
+      <xsd:element name="LoanUID" type="xsd:string"/>
+      <xsd:element name="TransUID" type="xsd:string"/>
+      <xsd:element name="UserName" type="xsd:string"/>
+      <xsd:element name="VendorEnvironment" type="xsd:string"/>
+      <xsd:element name="VendorKey" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>]]></con:schema>
+    <con:targetNamespace>http://www.elliemae.com/vps/contract</con:targetNamespace>
+</con:schemaEntry>

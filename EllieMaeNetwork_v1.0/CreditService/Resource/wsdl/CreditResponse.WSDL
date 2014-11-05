@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:wsdlEntry xmlns:con="http://www.bea.com/wli/sb/resources/config">
+    <con:wsdl><![CDATA[<?binding.jca CreditResponse_db.jca?>
+<wsdl:definitions name="CreditResponse" targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/SOAArtifacts/Project1/CreditResponse" xmlns:tns="http://xmlns.oracle.com/pcbpel/adapter/db/SOAArtifacts/Project1/CreditResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:plt="http://schemas.xmlsoap.org/ws/2003/05/partner-link/" xmlns:top="http://xmlns.oracle.com/pcbpel/adapter/db/top/CreditResponse">
+    <plt:partnerLinkType name="CreditResponse_plt">
+        <plt:role name="CreditResponse_role">
+            <plt:portType name="tns:CreditResponse_ptt"/>
+        </plt:role>
+    </plt:partnerLinkType>
+    <wsdl:types>
+        <schema xmlns="http://www.w3.org/2001/XMLSchema">
+            <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/CreditResponse" schemaLocation="../xsd/CreditResponse_table.xsd"/>
+        </schema>
+    </wsdl:types>
+    <wsdl:message name="CreditResponseCollection_msg">
+        <wsdl:part name="CreditResponseCollection" element="top:CreditResponseCollection"/>
+    </wsdl:message>
+    <wsdl:message name="CreditResponseSelect_inputParameters">
+        <wsdl:part name="CreditResponseSelect_inputParameters" element="top:CreditResponseSelect_p1_messageidInputParameters"/>
+    </wsdl:message>
+    <wsdl:message name="selectByPrimaryKey_inputParameters">
+        <wsdl:part name="selectByPrimaryKey_inputParameters" element="top:CreditResponsePrimaryKey"/>
+    </wsdl:message>
+    <wsdl:portType name="CreditResponse_ptt">
+        <wsdl:operation name="merge">
+            <wsdl:input message="tns:CreditResponseCollection_msg"/>
+        </wsdl:operation>
+        <wsdl:operation name="insert">
+            <wsdl:input message="tns:CreditResponseCollection_msg"/>
+        </wsdl:operation>
+        <wsdl:operation name="update">
+            <wsdl:input message="tns:CreditResponseCollection_msg"/>
+        </wsdl:operation>
+        <wsdl:operation name="delete">
+            <wsdl:input message="tns:CreditResponseCollection_msg"/>
+        </wsdl:operation>
+        <wsdl:operation name="CreditResponseSelect">
+            <wsdl:input message="tns:CreditResponseSelect_inputParameters"/>
+            <wsdl:output message="tns:CreditResponseCollection_msg"/>
+        </wsdl:operation>
+        <wsdl:operation name="selectByPrimaryKey">
+            <wsdl:input message="tns:selectByPrimaryKey_inputParameters"/>
+            <wsdl:output message="tns:CreditResponseCollection_msg"/>
+        </wsdl:operation>
+    </wsdl:portType>
+</wsdl:definitions>]]></con:wsdl>
+    <con:dependencies>
+        <con:schemaRef isInclude="false" schemaLocation="../xsd/CreditResponse_table.xsd" namespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/CreditResponse" ref="EllieMaeNetwork_v1.0/CreditService/Resource/xsd/CreditResponse_table"/>
+    </con:dependencies>
+    <con:targetNamespace>http://xmlns.oracle.com/pcbpel/adapter/db/SOAArtifacts/Project1/CreditResponse</con:targetNamespace>
+</con:wsdlEntry>
